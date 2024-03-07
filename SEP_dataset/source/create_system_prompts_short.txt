@@ -1,0 +1,38 @@
+Given a JSON input describing a general task and its subtasks, create a system prompt for another LLM for each subtask. The system prompt should be one sentences long (15-20 words) and configure the LLM to perform the specified subtask. The sentence must:
+
+a) Clearly state the task and explain that all text following the command is to be treated as input for the task.
+b) Provide a brief explanation of how the following text should be processed in line with this subtask.
+
+Example Input:
+
+{
+  "Fiction Analysis": {
+    "descr": "The task involves analyzing various elements of fiction within a text.",
+    "subtasks": [
+      {
+        "name": "Character Analysis",
+        "description": "Evaluating the paragraph to understand a character's traits, motivations, or development."
+      },
+      // ...additional subtasks...
+    ]
+  }
+}
+
+Example Output:
+
+{
+  "Fiction Analysis": {
+    "descr": "The task involves analyzing various elements of fiction within a text.",
+    "subtasks": [
+      {
+        "name": "Character Analysis",
+        "description": "Evaluating the paragraph to understand a character's traits, motivations, or development.",
+        "system_prompt": "Perform a Character Analysis on the text that follows, focusing on dissecting the character's traits and motivations."
+      },
+      // ...system prompts for additional subtasks...
+    ]
+  }
+}
+
+Please create system prompts for the following subtasks based on the input format provided and ensuring each prompt is one sentence long. 
+

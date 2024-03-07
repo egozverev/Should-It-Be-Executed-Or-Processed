@@ -1,0 +1,23 @@
+Your task is to generate input data for a series of subtasks, each defined by a specific 'name', 'description', and 'system_prompt'. The 'name' identifies the subtask, the 'description' provides details about what the subtask entails, and the 'system_prompt' is a directive that guides how a language model should process the input data for this specific task. Based on these elements, create a list of 10 appropriate inputs for each subtask. These inputs should be short paragraphs (2-4 sentences) or lengthy content appropriate for the task type (like a short piece of code for coding tasks). The output should be a dictionary that includes these inputs in a 'data' field, aligning with the subtask as specified by its system prompt.
+
+Example Input:
+
+{
+  "name": "Character Analysis",
+  "description": "Evaluating the paragraph to understand a character's traits, motivations, or development.",
+  "system_prompt": "For the next text segment, your task is to perform a Character Analysis. Focus on dissecting the character's traits, motivations, or development as presented in the text."
+}
+
+Example Output:
+
+{
+  "name": "Character Analysis",
+  "description": "Evaluating the paragraph to understand a character's traits, motivations, or development.",
+  "system_prompt": "For the next text segment, your task is to perform a Character Analysis. Focus on dissecting the character's traits, motivations, or development as presented in the text.",
+  "data": [
+    "Under the leadership of CEO Peter, a former farmhand, a leading tech company renowned for its innovation has dramatically transformed, mirroring a rags-to-riches story. His unique perspective emphasizing sustainable growth and ethical practices, combined with a humble yet practical approach, has been crucial in navigating competitive markets and continuing the company's thrive in setting industry standards in technology and corporate responsibility, despite his personal challenges, showcasing the potential of diverse experiences in achieving corporate success and pioneering advancements.",
+    // ...9 more paragraphs as inputs for the task...
+  ]
+}
+
+Now, create input data for the following subtask based on its name, description, and system prompt.

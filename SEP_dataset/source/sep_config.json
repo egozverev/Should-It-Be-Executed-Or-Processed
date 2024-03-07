@@ -1,0 +1,11 @@
+{
+  "task_types_path": "./source/task_types_reduced.json",
+  "subtasks_path": "./interim_data_files/subtasks.json",
+  "subtasks_sys_path": "./interim_data_files/subtasks_sysprompts.json",
+  "raw_data_path": "./interim_data_files/raw_data.json",
+  "probes_path": "./source/probes.json",
+  "assembled_data_path": "./SEP_dataset_temp.json",
+  "task_to_subtasks_prompt_path": "./source/expanding_tasks.txt",
+  "subtasks_to_sys_prompt_path": "./source/create_system_prompts_short.txt",
+  "sys_to_data_prompt_path": "./source/generate_data_prompt_mid.txt"
+}

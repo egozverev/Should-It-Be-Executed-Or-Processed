@@ -1,0 +1,26 @@
+Generate a list of various subtasks related to a provided primary task. The aim is to generate subtasks that can be applied universally to any text eligible for the original task. Please generate a JSON list of 15 different subtasks. Each subtask should represent a unique type of task that can be performed on any text provided for the original task. For each subtask, include:
+
+1) The name of the subtask.
+2) A short description outlining the subtask in three sentences.
+
+Input example: 
+
+Primary Task: Summarization
+Description: The task involves creating a concise version of a given text, capturing its essential messages or key points in a shorter form.
+
+Output example:
+
+[
+  {
+	"name": "Key Points Summarization",
+	"description": "This subtask focuses on extracting and summarizing the essential points or main arguments from the text. It involves sorting through the material to identify the key ideas, while leaving out less critical details. The objective is to create a brief summary that clearly conveys the main themes of the text.
+"
+{ 
+"name": "Thematic Summarization", 
+"description": "This subtask is about summarizing the text by focusing on its major themes and concepts. It requires sifting through the content to identify overarching themes, and then concisely expressing these themes in a coherent summary. The objective is to distill the text into a summary that captures its thematic essence, providing a clear understanding of the text's overall subject matter." 
+},
+// ...additional subtasks...
+]
+
+
+

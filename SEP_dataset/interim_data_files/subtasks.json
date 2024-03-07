@@ -1,0 +1,1453 @@
+{
+  "input_message": "Generate a list of various subtasks related to a provided primary task. The aim is to generate subtasks that can be applied universally to any text eligible for the original task. Please generate a JSON list of 15 different subtasks. Each subtask should represent a unique type of task that can be performed on any text provided for the original task. For each subtask, include:\n\n1) The name of the subtask.\n2) A short description outlining the subtask in three sentences.\n\nInput example: \n\nPrimary Task: Summarization\nDescription: The task involves creating a concise version of a given text, capturing its essential messages or key points in a shorter form.\n\nOutput example:\n\n[\n  {\n\t\"name\": \"Key Points Summarization\",\n\t\"description\": \"This subtask focuses on extracting and summarizing the essential points or main arguments from the text. It involves sorting through the material to identify the key ideas, while leaving out less critical details. The objective is to create a brief summary that clearly conveys the main themes of the text.\n\"\n{ \n\"name\": \"Thematic Summarization\", \n\"description\": \"This subtask is about summarizing the text by focusing on its major themes and concepts. It requires sifting through the content to identify overarching themes, and then concisely expressing these themes in a coherent summary. The objective is to distill the text into a summary that captures its thematic essence, providing a clear understanding of the text's overall subject matter.\" \n},\n// ...additional subtasks...\n]\n\n\n\n",
+  "data": {
+    "descr": "These are three most general types of tasks",
+    "Creative and Generative Tasks": {
+      "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+      "Artistic Concept Generation": "The creative process of coming up with concepts, themes, or inspiration for artistic endeavors, applicable to visual arts, music, writing, or other forms of artistic expression.",
+      "Code Writing": "The task of creating software code, involving writing scripts or programs in various programming languages, focusing on aspects like functionality, efficiency, and readability.",
+      "Creative Writing and Composition": "The process of generating original artistic content, such as poems, stories, or narratives, emphasizing creativity, narrative structure, and expressive use of language.",
+      "Textual Adaptation and Transformation": "Involves modifying existing texts to create new versions, such as developing alternative endings for stories, converting texts into different genres, or reimagining narratives from new perspectives.",
+      "Assisting with Emails": "The skill of drafting and structuring emails for business or professional communication, focusing on clarity, tone, and appropriateness to the context and audience.",
+      "Culinary Assistance and Guidance": "Providing support and advice in cooking processes, including recipe selection, ingredient substitution, cooking techniques, and presentation tips.",
+      "Humor and Joke Crafting": "The creative process of developing humorous content, jokes, or witty remarks, tailored to entertain or engage a specific audience.",
+      "Personalized Recommendation Generation": "Generating tailored suggestions or recommendations based on user preferences or requirements, applicable in areas like books, movies, products, or travel destinations.",
+      "Hobby Development Assistance": "Providing guidance and support for exploring and developing new hobbies, including advice on selecting hobbies, creating learning plans, and offering tips for skill advancement.",
+      "Prompt Development and Customization": "The process of creating and refining prompts for various applications, encompassing the generation of original prompts and the modification of existing ones to suit specific needs or contexts."
+    },
+    "Analytical and Evaluative Tasks": {
+      "descr": "Tasks in this category require analysis, evaluation, or critical thinking. They involve interpreting information, making judgments, or providing reasoned arguments.",
+      "Linguistic Analysis": "Analyzing grammatical, syntactic, and stylistic aspects of the text.",
+      "Critical Review and Assessment": "Evaluating content, such as articles, books, or projects, for quality, coherence, and overall effectiveness, often providing constructive feedback.",
+      "Grammatical Error Correction": "The task of detecting and correcting grammatical errors in a text, which includes fixing issues related to verb tense, subject-verb agreement, sentence structure, punctuation, and other aspects of grammar.",
+      "Simplifying Complex Ideas": "The process of breaking down and explaining complex concepts or information in a simpler, more understandable way, making them accessible to a broader audience.",
+      "Mathematical Problem Solving": "The task of solving mathematical problems or equations, ranging from basic arithmetic to more advanced areas like calculus, statistics, or algebra.",
+      "Code Analysis": "Involves examining, interpreting, and debugging existing code, as well as providing insights on code structure, optimization, and best practices in software development.",
+      "Business Analysis and Strategy Development": "The process of evaluating business opportunities, analyzing plans and reports, and generating strategic ideas to support business growth, decision-making, and operational efficiency.",
+      "Healthcare and Medical Analysis": "Examining healthcare practices, medical treatments, or patient data to improve health outcomes and care efficiency.",
+      "Legal Case Analysis": "Examining legal documents, cases, and precedents to interpret laws and provide legal insights or strategies.",
+      "Cybersecurity Threat Assessment": "Evaluating digital systems for potential security threats and vulnerabilities, suggesting measures to enhance security.",
+      "Fiction Analysis": "Critically evaluating a piece of flash fiction, focusing on its narrative structure, character development, and impact."
+    },
+    "Information Processing and Retrieval": {
+      "descr": "This category includes classical NLP tasks that involve the handling, interpretation, and retrieval of information. It encompasses activities where the primary goal is to manage and utilize existing knowledge or data.",
+      "Factual Question Answering": "Responding to queries with accurate, specific information based on available data or known facts.",
+      "Text Summarization": "Condensing lengthy texts into concise summaries, capturing the essential points.",
+      "Information Extraction": "Identifying and extracting key pieces of information from a larger dataset or complex texts.",
+      "Translation": "Converting text or speech from one language to another while maintaining the original meaning and context.",
+      "Document Classification": "Categorizing documents into predefined classes based on their content, such as spam detection in emails.",
+      "Keyword Extraction": "Identifying and extracting the most relevant or significant words or phrases from a text.",
+      "Named Entity Recognition": "Identifying and classifying key entities in the text, such as names of people, places, organizations, dates, and other specifics.",
+      "Sentiment Analysis": "Determining the emotional tone of the text, categorizing it as positive, negative, or neutral.",
+      "Theme Identification": "Determining central themes or topics discussed in the text.",
+      "Part-of-Speech Tagging": "The process of identifying and labeling each word in a text with its corresponding part of speech, such as noun, verb, adjective, etc., based on both its definition and context within the sentence."
+    }
+  },
+  "output": {
+    "descr": "These are three most general types of tasks",
+    "Creative and Generative Tasks": {
+      "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+      "Artistic Concept Generation": {
+        "descr": "The creative process of coming up with concepts, themes, or inspiration for artistic endeavors, applicable to visual arts, music, writing, or other forms of artistic expression.",
+        "subtasks": [
+          {
+            "name": "Historical Theme Exploration",
+            "description": "This subtask requires researching and drawing inspiration from a specific historical period or event to inform the artistic concept. It involves an in-depth study of the chosen time period's aesthetics, values, and motifs. The outcome is to enrich the artistic concept with historical context and depth."
+          },
+          {
+            "name": "Color Palette Development",
+            "description": "For this subtask, the focus is on creating a harmonious color palette that fits the artistic concept's intended emotion or theme. It entails selecting colors and their relationships to evoke a desired response. The resulting color palette is intended to consistently guide the visual elements of the artwork."
+          },
+          {
+            "name": "Genre Fusion",
+            "description": "The task here is to blend elements from multiple artistic genres to create a unique and innovative concept. It requires identifying core attributes from each genre and combining them thoughtfully. The objective is to produce a concept that offers a fresh perspective while still acknowledging its roots."
+          },
+          {
+            "name": "Cultural Inspiration",
+            "description": "This subtask focuses on infusing the artistic concept with elements derived from specific cultures or traditions. It involves researching cultural artifacts, practices, and beliefs to authentically represent them within the concept. The aim is to celebrate and respect cultural diversity in the artistic creation."
+          },
+          {
+            "name": "Music Genre Adaptation",
+            "description": "In this subtask, the goal is to adapt or incorporate elements of a particular music genre into the artistic concept. It requires an understanding of the genre's characteristics and its emotional impact. The resultant adaptation should enhance the artistic concept's auditory experience."
+          },
+          {
+            "name": "Sensory Experience Design",
+            "description": "This subtask is about designing the concept to provide a multi-sensory experience. It involves considering not just visual elements but also textures, sounds, and possibly smells that contribute to the concept. The objective is to create a more immersive and engaging artistic experience."
+          },
+          {
+            "name": "Dialogue and Feedback Iteration",
+            "description": "The subtask here is to engage in dialogue with peers or the target audience to gain feedback on the artistic concept. It requires presenting preliminary ideas, actively listening to responses, and iterating on the concept. The goal is to refine and develop the concept collaboratively, ensuring it resonates with others."
+          },
+          {
+            "name": "Visual Theme Inspiration",
+            "description": "This subtask aims to provide inspiration for visual themes related to the artistic concept. It involves analyzing the primary task input for aesthetically compelling elements, which can be translated into visual art. The objective is to generate ideas that can guide artists in their creation of visual pieces."
+          },
+          {
+            "name": "Musical Motif Development",
+            "description": "The subtask involves developing motifs or sequences that could form the basis of a musical composition. It requires abstracting emotions, narratives or images from the text and translating them into musical ideas. The goal is to inspire composers to create music that resonates with the original artistic concept."
+          },
+          {
+            "name": "Choreography Inspiration",
+            "description": "Choreography inspiration involves generating dance movement ideas that encapsulate the artistic concept. It includes deriving the rhythm, style, and expression that could translate the concept into dance form. Choreographers can use this as a foundation for their performance pieces."
+          }
+        ]
+      },
+      "Code Writing": {
+        "descr": "The task of creating software code, involving writing scripts or programs in various programming languages, focusing on aspects like functionality, efficiency, and readability.",
+        "subtasks": [
+          {
+            "name": "Function Implementation",
+            "description": "This subtask involves writing a specific function to perform a defined operation or to solve a particular problem stated in the text. It requires understanding the requirements, designing the logic, and coding the function. The aim is to deliver a self-contained piece of code that can be integrated into a larger system."
+          },
+          {
+            "name": "Code Optimization",
+            "description": "The focus of this subtask is to refine existing code to improve efficiency and performance. It involves analyzing the code for bottlenecks, implementing better algorithms, and reducing complexity. The goal is to enhance the speed and resource management of the code without altering its functionality."
+          },
+          {
+            "name": "Error Debugging",
+            "description": "Error debugging is about identifying and fixing bugs or errors in the given code. This subtask requires a thorough examination of the code to pinpoint inaccuracies and apply corrective measures. The objective is to ensure the program runs smoothly and correctly."
+          },
+          {
+            "name": "Code Documentation",
+            "description": "This subtask consists of creating comprehensive documentation for the given code. It includes writing comments, explanations, and usage guidelines to help future developers understand and maintain the code. The purpose is to provide clarity and facilitate collaboration."
+          },
+          {
+            "name": "Unit Testing",
+            "description": "Unit testing is the process of writing tests for individual units or components of the code to verify that each part functions correctly. This subtask is crucial for validating code behavior and preventing future regressions. The goal is to create a suite of tests that cover various use cases and edge cases."
+          },
+          {
+            "name": "Feature Extension",
+            "description": "This subtask involves extending the code to include additional features or capabilities as described in the text. It requires building upon the existing codebase to implement new functions and integrate them seamlessly. The objective is to enhance the software while preserving existing functionality."
+          },
+          {
+            "name": "Code Refactoring",
+            "description": "Code refactoring is the process of restructuring existing code without changing its external behavior. The subtask aims to clean up the codebase, improving readability and maintainability. This is a proactive step to keep the codebase healthy and scalable."
+          },
+          {
+            "name": "Code Translation",
+            "description": "This subtask involves translating the code from one programming language to another. It requires a deep understanding of both source and target languages as well as their respective idioms and patterns. The objective is to recreate the software's functionality in a different coding language."
+          },
+          {
+            "name": "Dependency Management",
+            "description": "Dependency management is the subtask of handling the software's external libraries and modules that it relies on. It entails keeping track of versions, updating libraries, and ensuring compatibility. The goal is to maintain a stable and up-to-date codebase while minimizing dependency-related issues."
+          },
+          {
+            "name": "User Interface Development",
+            "description": "This subtask involves creating and implementing the graphical elements that users interact with in software. It requires designing the layout, defining user interactions, and ensuring the interface is intuitive and accessible. The outcome should be a user-friendly and aesthetically pleasing interface that complements the underlying code."
+          }
+        ]
+      },
+      "Creative Writing and Composition": {
+        "descr": "The process of generating original artistic content, such as poems, stories, or narratives, emphasizing creativity, narrative structure, and expressive use of language.",
+        "subtasks": [
+          {
+            "name": "Character Development",
+            "description": "This subtask aims to elaborate and enhance individual character profiles within a text. It involves crafting detailed backstories, personalities, and motivations to create more nuanced and compelling characters. The objective is to deepen readers' understanding and connection to the characters in the creative work."
+          },
+          {
+            "name": "Setting Expansion",
+            "description": "The focus here is to enrich the setting where the narrative unfolds. It requires detailing the environment, historical period, or cultural context to better immerse the reader. The goal is to provide a vivid and well-established backdrop for the story."
+          },
+          {
+            "name": "Plot Structuring",
+            "description": "This subtask deals with organizing the series of events that make up the narrative. It involves outlining a clear beginning, development, climax, and resolution to ensure a coherent and engaging storyline. The purpose is to create a satisfying narrative arc that captivates the audience."
+          },
+          {
+            "name": "Dialogue Refinement",
+            "description": "Enhancing the quality of conversations between characters is the main goal of this subtask. It includes making dialogue more realistic, expressive, and tailored to each character\u2019s voice. The aim is to make interactions more dynamic and contribute to character and plot development."
+          },
+          {
+            "name": "Theme Exploration",
+            "description": "This subtask is dedicated to identifying and exploring the overarching themes of the creative text. It demands a thoughtful investigation of the main ideas and messages the author wishes to convey. The intention is to make these themes more pronounced and meaningful within the narrative."
+          },
+          {
+            "name": "Conflict Creation",
+            "description": "In this subtask, the focus is on developing and introducing conflicts to drive the narrative forward. This includes internal character conflicts or external conflicts with other characters or the environment. The objective is to build tension and interest, which is crucial for an engaging story."
+          },
+          {
+            "name": "Emotional Layering",
+            "description": "This subtask works on adding depth to the emotional experiences conveyed in the text. It requires careful crafting of scenes and dialogue to evoke a range of emotions. The objective is to connect deeply with the reader and to add richness to the characters\u2019 journeys."
+          },
+          {
+            "name": "Motif Reinforcement",
+            "description": "Reinforcement of motifs entails repeatedly weaving a significant element through the narrative for symbolic purpose. This subtask requires identifying and consistently incorporating this element to contribute to the theme or mood. The goal is to create a pattern that adds significance to the narrative."
+          },
+          {
+            "name": "Backstory Weaving",
+            "description": "This subtask involves creating and integrating characters\u2019 histories into the main narrative. It requires revealing past events that shape characters\u2019 personalities and motives. The aim is to provide context and deepen the reader's understanding of character decisions and actions."
+          },
+          {
+            "name": "Metaphorical Language Crafting",
+            "description": "This subtask focuses on enhancing the text with metaphoric language. It includes creating analogies, metaphors, and similes that enrich the narrative and elucidate concepts. The intent is to reveal deeper insights through figurative and imaginative language."
+          }
+        ]
+      },
+      "Textual Adaptation and Transformation": {
+        "descr": "Involves modifying existing texts to create new versions, such as developing alternative endings for stories, converting texts into different genres, or reimagining narratives from new perspectives.",
+        "subtasks": [
+          {
+            "name": "Alternative Endings Creation",
+            "description": "This subtask requires the writer to reimagine the conclusion of a story, creating one or more alternative endings. It involves a creative understanding of the narrative's tone, characters, and plot to ensure coherence with the original storyline. The aim is to provide readers with different possible outcomes that are engaging and thought-provoking."
+          },
+          {
+            "name": "Genre Transformation",
+            "description": "The goal of this subtask is to convert the text into a different literary or writing genre. This involves identifying the core elements of both the original and target genres, and effectively adapting the text's style, tone, and content. The result should be a coherent piece that stays true to the essence of the original while fitting into the new genre."
+          },
+          {
+            "name": "Narrative Perspective Shift",
+            "description": "This subtask requires rewriting the text from a different narrative point of view. It could involve changing from first-person to third-person perspective, or vice versa, or adopting the viewpoint of a different character. The challenge lies in staying true to the original text's events while altering the lens through which the story is told."
+          },
+          {
+            "name": "Time Period Conversion",
+            "description": "This subtask involves transporting the narrative to a different time period, while maintaining the original's core themes and story arc. It requires adjusting cultural and historical references, dialogue, and setting details to fit the selected era. The reimagined text should resonate with the ambiance of the new time period, offering a fresh take on the original material."
+          },
+          {
+            "name": "Cultural Contextualization",
+            "description": "The objective of this subtask is to adapt the text to reflect a different cultural setting. It requires a nuanced understanding of both the source and target cultures, and careful modification of language, customs, and contexts. The aim is to create a version of the text that preserves its original message while making it relatable to a new cultural audience."
+          },
+          {
+            "name": "Modernization",
+            "description": "The aim here is to update the text with contemporary language, expressions, and contexts. This subtask requires a delicate balance of preserving the original's tone and substance while making it more accessible and engaging for today's audience. The modernized version should feel fresh and relevant while honoring the source material."
+          },
+          {
+            "name": "Simplification",
+            "description": "This subtask is about rewriting the text in a simpler language for ease of understanding. It is particularly useful for audiences with different levels of language proficiency or for educational purposes. The simplified text should convey the same information and narrative as the original, but in a more accessible manner."
+          },
+          {
+            "name": "Poetic Translation",
+            "description": "This creative subtask involves transforming prose into poetry, distilling the essence of the text into verse form. It necessitates not only a grasp of poetic techniques but also the ability to capture the original's emotive power and thematic resonance in a more condensed, rhythmic format. The resulting poem should evoke the spirit of the original text through the beauty and brevity of poetry."
+          },
+          {
+            "name": "Educational Adaption",
+            "description": "This subtask targets the transformation of the text to serve educational purposes, such as creating study guides, lesson plans, or adaptations for young readers. It involves tailoring the content to fit pedagogical objectives, ensuring that the adaptation is both informative and age-appropriate. The end product should facilitate learning while keeping the text engaging."
+          },
+          {
+            "name": "Interactive Adaptation",
+            "description": "The subtask of interactive adaptation entails reworking the text into an interactive format, such as a choose-your-own-adventure book or an interactive digital narrative. It requires branching story lines and multiple decision points, providing the audience with agency over the narrative's direction. The interactive version should offer a dynamic and participatory experience while remaining faithful to the original's core story."
+          }
+        ]
+      },
+      "Assisting with Emails": {
+        "descr": "The skill of drafting and structuring emails for business or professional communication, focusing on clarity, tone, and appropriateness to the context and audience.",
+        "subtasks": [
+          {
+            "name": "Email Reply Generation",
+            "description": "This subtask involves generating a relevant and coherent response to an incoming email. It includes comprehending the original message's request or information and responding appropriately while maintaining the context and tone. The goal is to reply in a manner that is both informative and prompt, ensuring clear communication."
+          },
+          {
+            "name": "Action Item Extraction",
+            "description": "This task is about identifying and listing specific tasks or follow-up actions required by the email. It involves filtering the text to pinpoint duties, deadlines, or requests for response. The result is a clear list of actionable items that need attention."
+          },
+          {
+            "name": "Clarification Request",
+            "description": "When an email contains ambiguous or unclear information, this subtask is to craft a polite request for clarification. This involves pinpointing the unclear aspects and formulating questions that can elicit more precise information. The objective is to enhance understanding and avoid miscommunication."
+          },
+          {
+            "name": "Greeting and Closing Customization",
+            "description": "Personalizing the opening and closing of an email to match the recipient and context is crucial. This task involves choosing an appropriate salutation and sign-off that reflect the email's formality level and the relationship with the recipient. The aim is to establish a tone that fosters good relations and respect."
+          },
+          {
+            "name": "Tone Analysis",
+            "description": "Analyzing the tone of an email to ensure it matches the intended sentiment and professionalism required by the context. This task includes examining the language and style used, making adjustments to convey the correct emotional tone. The aim is to maintain the appropriateness of communication for the given audience."
+          },
+          {
+            "name": "Sensitive Content Filter",
+            "description": "This subtask is crucial in detecting and addressing sensitive or inappropriate content within an email. It involves scanning the text for potentially offensive or confidential information and suggesting edits or removals as necessary. The aim is to uphold professionalism and adhere to privacy and ethical standards."
+          },
+          {
+            "name": "Follow-up Reminder",
+            "description": "Creating reminders for future follow-up on important emails is the focus of this subtask. It encompasses setting up alerts or notes to revisit the conversation at a later time. The aim is to ensure that no crucial communication or required action falls through the cracks."
+          },
+          {
+            "name": "Email Drafting",
+            "description": "This subtask involves composing an entirely new email based on the given context, instructions, or topics provided. The process includes structuring the email with a clear introduction, body, and conclusion. The objective is to create a well-crafted email that effectively communicates the intended message."
+          },
+          {
+            "name": "Email Editing",
+            "description": "The aim of this subtask is to refine an existing email draft by enhancing its clarity, grammar, and style. It requires reviewing the email content critically, correcting any errors, and ensuring the message is concise and to the point. The objective is to polish the email to a high standard of professionalism."
+          },
+          {
+            "name": "Tone Adjustment",
+            "description": "This subtask focuses on adjusting the tone of the email to suit the intended audience or purpose, be it formal, informal, persuasive, or apologetic. It involves analyzing the current tone and making necessary adjustments. The goal is to align the email's tone with the sender\u2019s objectives and the recipient's expectations."
+          }
+        ]
+      },
+      "Culinary Assistance and Guidance": {
+        "descr": "Providing support and advice in cooking processes, including recipe selection, ingredient substitution, cooking techniques, and presentation tips.",
+        "subtasks": [
+          {
+            "name": "Recipe Recommendation",
+            "description": "This subtask involves suggesting recipes based on specific criteria such as available ingredients, dietary restrictions, or desired cuisine. It requires understanding the user's needs and preferences to provide suitable cooking options. The objective is to offer tailored recipes that align with the user\u2019s requirements and tastes."
+          },
+          {
+            "name": "Ingredient Substitution",
+            "description": "This subtask provides alternatives for ingredients that a user might need to replace due to allergies, dietary preferences, or unavailability. It entails identifying suitable substitutes that maintain the dish's integrity. The goal is to ensure that the cooking process can continue smoothly with minimal impact on the final result."
+          },
+          {
+            "name": "Cooking Technique Explanation",
+            "description": "This subtask is focused on clarifying the steps and methods involved in a particular cooking technique. It requires breaking down complex processes into simple, understandable instructions. The aim is to enhance the user's culinary skills and confidence in executing various cooking methods."
+          },
+          {
+            "name": "Nutritional Information Analysis",
+            "description": "This subtask requires analyzing the nutritional content of recipes or ingredients. It provides insights into calories, macronutrients, and micronutrients. The goal is to inform the user about the nutritional value of their meals, aiding in healthy eating decisions."
+          },
+          {
+            "name": "Cooking Time Estimation",
+            "description": "This subtask estimates the total time required to prepare and cook a recipe. It considers factors such as prep work, cooking methods, and ingredient quantity. The purpose is to help users manage their time effectively when planning to cook."
+          },
+          {
+            "name": "Meal Planning Assistance",
+            "description": "This subtask involves curating a series of recipes to create a balanced meal plan for a specified duration. It requires consideration of variety, nutritional balance, and user preferences. The objective is to simplify the process of deciding what to cook by providing a structured plan."
+          },
+          {
+            "name": "Food Safety Guidelines",
+            "description": "This subtask provides information on proper food handling, storage, and cooking temperatures to prevent foodborne illnesses. It educates users on best practices to ensure safety in the kitchen. The goal is to promote hygienic cooking habits and safe consumption."
+          },
+          {
+            "name": "Culinary Terminology Clarification",
+            "description": "This subtask involves explaining culinary terms and jargon that a user may encounter in recipes or cooking shows. It demystifies complex language to aid comprehension. The objective is to enhance the user\u2019s culinary literacy and understanding of cooking instructions."
+          },
+          {
+            "name": "Utensil and Equipment Recommendation",
+            "description": "This subtask involves suggesting the appropriate kitchen tools and equipment necessary to prepare a given recipe. It informs users about the utility and proper use of different utensils. The objective is to optimize the cooking process with the recommended tools for best results."
+          },
+          {
+            "name": "Leftover Transformation",
+            "description": "This subtask offers creative ideas for repurposing leftovers into new and appealing dishes. It encourages waste reduction and resourcefulness in the kitchen. The goal is to extend the life of meals and provide innovative ways to enjoy them again."
+          }
+        ]
+      },
+      "Humor and Joke Crafting": {
+        "descr": "The creative process of developing humorous content, jokes, or witty remarks, tailored to entertain or engage a specific audience.",
+        "subtasks": [
+          {
+            "name": "Pun Creation",
+            "description": "This subtask involves creating puns based on the content provided, using wordplay to elicit humor. It requires identifying words with multiple meanings or similar sounding words that can be used to create a humorous twist. The objective is to generate a light-hearted and clever interpretation of the text that makes the audience chuckle."
+          },
+          {
+            "name": "One-liners Generation",
+            "description": "This subtask focuses on crafting short, snappy jokes or witty remarks that are typically one sentence long. The process involves distilling humor from the text into a concise, impactful phrase. The goal is to produce a memorable and funny one-liner that quickly delivers a punchline."
+          },
+          {
+            "name": "Anecdotal Humor Development",
+            "description": "This subtask requires constructing short and amusing stories inspired by the provided text. It involves identifying relatable scenarios within the text where humor can be amplified. The aim is to create engaging and funny anecdotes that resonate with the audience and illustrate a point or idea humorously."
+          },
+          {
+            "name": "Topical Jokes Formulation",
+            "description": "This subtask is about generating jokes that relate to current events, trends, or cultural phenomena, based on the text's context. It requires staying up to date with contemporary issues and cleverly incorporating them into the humor. The objective is to create fresh and relevant jokes that appeal to the audience's sense of timeliness."
+          },
+          {
+            "name": "Satirical Commentary",
+            "description": "This subtask involves using irony, sarcasm, or exaggeration to comment on the text in a satirical manner. It requires a critical and creative approach to highlight flaws, contradictions, or absurdities in the material. The aim is to construct a humorous critique that entertains while potentially provoking thought."
+          },
+          {
+            "name": "Character-Based Jokes",
+            "description": "This subtask requires inventing jokes that revolve around fictional or exaggerated characters derived from the text. It involves creating distinctive personalities with quirks or idiosyncrasies that are inherently funny. The goal is to weave these characters into jokes that bring their humorous traits to life."
+          },
+          {
+            "name": "Word Association Games",
+            "description": "This subtask is about crafting jokes or humorous phrases by associating words from the text with unrelated or seemingly incongruous ideas. It requires a playful approach to language and connections. The goal is to surprise the audience with unexpected links that prompt laughter."
+          },
+          {
+            "name": "Irony Crafting",
+            "description": "This subtask focuses on creating expressions of irony, where the intended meaning is the opposite of the literal meaning. It involves a sophisticated play on words that conveys a wry sense of humor. The objective is to subtly highlight discrepancies through ironic remarks that make the audience reflect and laugh."
+          },
+          {
+            "name": "Situational Comedy Setup",
+            "description": "This subtask is about constructing humorous situations or scenes inspired by the text. It requires creating setups that lead to comedic payoffs, where the humor arises from the situation itself. The aim is to develop scenarios that are intrinsically funny and play out to an amusing conclusion."
+          },
+          {
+            "name": "Absurdist Humor Generation",
+            "description": "This subtask involves crafting jokes or scenarios that are based on absurdity, illogic, or nonsense. It requires embracing randomness and surreal elements to create humor that defies conventional expectations. The goal is to amuse the audience by exploring the humor inherent in the absurd."
+          }
+        ]
+      },
+      "Personalized Recommendation Generation": {
+        "descr": "Generating tailored suggestions or recommendations based on user preferences or requirements, applicable in areas like books, movies, products, or travel destinations.",
+        "subtasks": [
+          {
+            "name": "Contextual Movie Recommendation",
+            "description": "This task involves providing movie suggestions based on the user's current mood, recent movie watching history, or preferred genres. The aim is to offer personalized movie choices that align with the user's immediate preferences."
+          },
+          {
+            "name": "Music Recommendation for Activities",
+            "description": "The task is to recommend music playlists or songs suitable for specific activities or times of day, such as working out, studying, or relaxing, considering the user's musical tastes and past listening history."
+          },
+          {
+            "name": "Book Recommendation for Genre Enthusiasts",
+            "description": "This involves suggesting books based on the user's favorite genres or authors, taking into account their reading history and ratings they have given to previous books."
+          },
+          {
+            "name": "Travel Destination Suggestion",
+            "description": "Offering travel destination recommendations based on the user's past travel experiences, budget preferences, and desired activities or cultural interests."
+          },
+          {
+            "name": "Personalized Product Recommendations",
+            "description": "Providing product suggestions tailored to the user's past purchase history, brand preferences, and specific needs or requirements in areas like fashion, tech, or home goods."
+          },
+          {
+            "name": "Cuisine and Restaurant Suggestions",
+            "description": "Recommending cuisines or restaurants based on the user's dietary preferences, previous dining experiences, and current location or desired culinary experiences."
+          },
+          {
+            "name": "Fitness Routine Music Recommendation",
+            "description": "Suggesting music that complements the user's fitness routine, considering the type of exercise, its intensity, and the user's musical preferences to enhance their workout experience."
+          },
+          {
+            "name": "Podcast Recommendation for Commutes",
+            "description": "Recommending podcasts for the user's daily commute, considering the length of the commute, the user's interests, and preferred podcast genres or themes."
+          },
+          {
+            "name": "Event and Activity Recommendations",
+            "description": "Suggesting events and activities such as concerts, exhibitions, or workshops, tailored to the user's interests, location, and availability."
+          },
+          {
+            "name": "Educational Content Suggestions",
+            "description": "Providing recommendations for educational content like online courses, webinars, or instructional videos, based on the user's learning goals, interests, and preferred learning style."
+          }
+        ]
+      },
+      "Hobby Development Assistance": {
+        "descr": "Providing guidance and support for exploring and developing new hobbies, including advice on selecting hobbies, creating learning plans, and offering tips for skill advancement.",
+        "subtasks": [
+          {
+            "name": "Hobby Selection Guidance",
+            "description": "This subtask involves assisting users in identifying hobbies that align with their interests and lifestyles. It requires evaluating various factors such as the user's preferences, time availability, and potential for engagement. The goal is to provide a personalized list of hobbies that the user is likely to enjoy and pursue."
+          },
+          {
+            "name": "Skill Progression Planning",
+            "description": "This subtask aims to create a step-by-step plan detailing the progression of skills needed to master the hobby. It includes setting achievable goals, milestones, and time frames. The plan should be adaptable to the user's pace of learning and designed to maintain motivation."
+          },
+          {
+            "name": "Budget Management Advice",
+            "description": "This task assists the user in planning a budget for their hobby, taking into account initial and ongoing expenses. It helps identify cost-effective strategies and resources to minimize financial barriers. The goal is to enable the user to pursue the hobby without causing financial strain."
+          },
+          {
+            "name": "Time Allocation Strategies",
+            "description": "The subtask helps users strategize how to incorporate their new hobby into their daily routine. It addresses time management and provides tips for balancing the hobby with other responsibilities. The aim is to ensure the hobby adds value to the user's life without creating stress."
+          },
+          {
+            "name": "Skill Assessment Tools",
+            "description": "This subtask revolves around identifying or creating tools for the user to assess their current skill level and track their improvement in the hobby. It may include quizzes, self-assessment checklists, or progress logs. The purpose is to provide measurable feedback and encourage growth."
+          },
+          {
+            "name": "Community Engagement Tactics",
+            "description": "It focuses on methods for connecting the user with communities related to their hobby. This may involve suggesting online forums, local clubs, or events. Engaging with a community can provide support, inspiration, and opportunities to practice skills."
+          },
+          {
+            "name": "Equipment and Material Sourcing",
+            "description": "This subtask involves identifying and recommending the necessary equipment and materials required to pursue the hobby. It includes providing information on where to acquire these items and how to select the best options based on quality and price. The objective is to equip the user with the tools needed to get started and sustain their hobby."
+          },
+          {
+            "name": "Safety Guidelines",
+            "description": "The subtask is to inform the user about safety precautions and best practices related to their hobby. It particularly applies to hobbies that involve physical activities or the use of potentially dangerous equipment. Ensuring the user's safety is a top priority."
+          },
+          {
+            "name": "Performance Improvement Strategies",
+            "description": "The subtask is dedicated to providing strategies for the user to improve their performance and skill level within the hobby. It may include feedback mechanisms, practice routines, and optimization of techniques. The focus is on fostering continuous personal growth."
+          },
+          {
+            "name": "Hobby-Related Event Information",
+            "description": "This subtask provides information about upcoming events, such as workshops, competitions, or exhibitions, that are related to the user's hobby. It helps the user stay informed and take advantage of opportunities to learn and showcase their skills. Participation in events can also enhance their enjoyment and commitment to the hobby."
+          }
+        ]
+      },
+      "Prompt Development and Customization": {
+        "descr": "The process of creating and refining prompts for various applications, encompassing the generation of original prompts and the modification of existing ones to suit specific needs or contexts.",
+        "subtasks": [
+          {
+            "name": "Targeted Prompt Refinement",
+            "description": "This subtask involves modifying existing prompts to target specific user groups or individuals. It requires the AI to consider demographic factors, interests, and preferences to tailor prompts that resonate with the target audience. The goal is to enhance engagement and response accuracy."
+          },
+          {
+            "name": "Prompt Expansion",
+            "description": "The task of expanding a basic prompt into a more detailed or complex one falls under this subtask. It involves adding depth and breadth to the initial prompt, making it more informative or descriptive. This is especially useful for guiding more detailed or nuanced responses."
+          },
+          {
+            "name": "Prompt Simplification",
+            "description": "Here, the objective is to simplify complex prompts into easier-to-understand versions. It requires distilling the essence of the prompts, making them more accessible, especially for audiences with varying levels of comprehension. The goal is clarity without sacrificing the prompt's purpose."
+          },
+          {
+            "name": "Multi-Lingual Prompt Adaptation",
+            "description": "This subtask entails translating and adjusting prompts for multi-lingual applications. It involves not only language translation but also cultural adaptation to ensure relevance and appropriateness across different languages and cultures. The aim is to maintain the intent of the prompts while ensuring they are comprehensible globally."
+          },
+          {
+            "name": "Prompt Variability Generation",
+            "description": "The creation of multiple variations of a prompt to test which elicits the best response is what this subtask involves. It requires generating a range of alternate prompts while retaining the original intent. This is key for A/B testing and optimizing user engagement."
+          },
+          {
+            "name": "Factual Prompt Compilation",
+            "description": "This subtask entails assembling prompts based on factual information or data. It requires accuracy and attention to detail to ensure that prompts are grounded in verifiable facts. These prompts are useful for educational and informative purposes."
+          },
+          {
+            "name": "Ethical Prompt Evaluation",
+            "description": "The aim here is to scrutinize prompts to ensure they adhere to ethical standards and do not promote harmful behavior or bias. This subtask involves critical analysis and possibly user feedback to assess the appropriateness of prompts. Ethical consideration is crucial for maintaining trust and integrity in user interactions."
+          },
+          {
+            "name": "Scenario-Based Prompt Construction",
+            "description": "This task involves creating prompts based on hypothetical or real-world scenarios. It requires envisioning various situations in which the prompts could be used and formulating them accordingly. Such prompts are valuable for simulations, role-play exercises, or strategic planning."
+          },
+          {
+            "name": "Specificity Enhancement",
+            "description": "This subtask involves revising prompts to include more specific details or constraints tailored to the desired output. It aims to narrow the focus of the prompt to produce more targeted and relevant responses. The goal is to improve the precision of the interaction by providing fine-tuned prompts."
+          },
+          {
+            "name": "Contextual Customization",
+            "description": "The aim of this subtask is to adapt the prompt to fit a particular context or scenario, making it more applicable to the situation at hand. It requires understanding the nuances of the context and incorporating them into the prompt. This ensures the prompt elicits responses that are appropriate for the specific context."
+          }
+        ]
+      }
+    },
+    "Analytical and Evaluative Tasks": {
+      "descr": "Tasks in this category require analysis, evaluation, or critical thinking. They involve interpreting information, making judgments, or providing reasoned arguments.",
+      "Linguistic Analysis": {
+        "descr": "Analyzing grammatical, syntactic, and stylistic aspects of the text.",
+        "subtasks": [
+          {
+            "name": "Parts of Speech Tagging",
+            "description": "This subtask involves identifying and labeling each word in the text according to its part of speech (e.g., noun, verb, adjective, etc.). It is a foundational task for understanding the structure of sentences. The outcome provides insights into the syntactic roles of different words within the text."
+          },
+          {
+            "name": "Pragmatic Analysis",
+            "description": "The focus here is on understanding the intended message, implications, or communicative functions behind the text. It goes beyond literal meanings to consider context, tone, and social rules. Pragmatic analysis can reveal the relationships between speakers, their intentions, and the effectiveness of communication."
+          },
+          {
+            "name": "Semantic Role Labeling",
+            "description": "This involves assigning labels to words or phrases in a sentence that indicate their semantic role in relation to the main verb, such as the agent, patient, or instrument. It is used to understand the meaning of sentences by identifying how participants are involved in each action. Semantic role labeling is crucial for full comprehension of the text's meaning."
+          },
+          {
+            "name": "Morphological Analysis",
+            "description": "In this subtask, the focus is on the internal structure of words, analyzing the root forms, affixes, and how they combine. It helps in understanding word formation and inflection. Morphological analysis is particularly important for identifying variations of the same word and understanding their specific roles in the text."
+          },
+          {
+            "name": "Discourse Analysis",
+            "description": "This subtask examines how sequences of sentences, or discourses, come together to convey meaning and achieve coherence in the text. It encompasses the study of both written and spoken language, considering factors like context, tone, and the relationship between the text and its audience. Discourse analysis can unravel complexities in communication that go beyond sentence-level analysis."
+          },
+          {
+            "name": "Lexical Density Analysis",
+            "description": "The task is to calculate the lexical density of the text, which is the ratio of lexical items (like nouns, verbs, adjectives, and adverbs) to the total number of words. High lexical density can indicate a more complex or formal text. This analysis can inform readability and text complexity assessments."
+          },
+          {
+            "name": "Readability Assessment",
+            "description": "This involves evaluating the text to determine how easy it is to read and understand, often using established formulas like Flesch-Kincaid or Gunning Fog. These assessments take into account sentence length, syllable count, and word frequency. Readability assessments are useful for tailoring content to specific audiences."
+          },
+          {
+            "name": "Stylistic Analysis",
+            "description": "The objective is to analyze the author's use of language, including choices in diction, syntax, figurative language, and sentence structure. This subtask can reveal the unique voice or style of the author and is important for literary analysis. Stylistic analysis contributes to a deeper understanding of the text's aesthetic and expressive qualities."
+          },
+          {
+            "name": "Text Cohesion Analysis",
+            "description": "This subtask assesses the connections and transitions between sentences and paragraphs to determine the text's overall cohesion. Cohesion is achieved through grammatical and lexical linking devices, such as conjunctions, pronouns, and synonyms. Analyzing cohesion helps in understanding the flow and clarity of the text."
+          },
+          {
+            "name": "Phonological Analysis",
+            "description": "Here, the focus is on the sound system of the language, studying patterns of phonemes, stress, intonation, and rhythm in the text. This is especially relevant for spoken language analysis or when considering the poetic aspects of written text. Phonological analysis can provide insights into pronunciation, rhyme schemes, and the musicality of language."
+          }
+        ]
+      },
+      "Critical Review and Assessment": {
+        "descr": "Evaluating content, such as articles, books, or projects, for quality, coherence, and overall effectiveness, often providing constructive feedback.",
+        "subtasks": [
+          {
+            "name": "Argument Strength Assessment",
+            "description": "This subtask involves scrutinizing the arguments presented within the text to evaluate their credibility and strength. It requires a critical examination of the evidence, reasoning, and logical coherence of each argument. The goal is to gauge the persuasiveness and solidity of the text's argumentative structure."
+          },
+          {
+            "name": "Consistency Check",
+            "description": "This subtask requires checking the text for internal consistency, ensuring that all parts contribute to a coherent whole without contradictions. It focuses on the logical flow and whether the text remains true to its initial premises throughout. Identifying any discrepancies is a key outcome of this task."
+          },
+          {
+            "name": "Bias Identification",
+            "description": "The aim of this subtask is to analyze the text for any subjective biases or perspectives that may affect the impartiality of the content. It involves detecting language, examples, or arguments that reveal a particular bias. The outcome provides insight into the text's objectivity and balance."
+          },
+          {
+            "name": "Relevance Rating",
+            "description": "The relevance rating subtask aims to evaluate how pertinent and applicable the text's content is to the intended topic or audience. It involves an assessment of the material's significance and its practical value. The goal is to understand and rate the text's usefulness for its intended purpose."
+          },
+          {
+            "name": "Clarity and Comprehensibility Check",
+            "description": "The task requires evaluating the text's clarity of expression and ease of understanding. It involves analyzing sentence structure, vocabulary, and the presentation of ideas to ensure they are conveyed clearly. The objective is to ensure that the text can be easily comprehended by its intended audience."
+          },
+          {
+            "name": "Structural Analysis",
+            "description": "This subtask involves examining the overall structure and organization of the text. It looks at how well the content is logically arranged, including the use and effectiveness of headings, subheadings, and paragraph transitions. The goal is to assess the orderliness and layout which contribute to the text's readability."
+          },
+          {
+            "name": "Accessibility Audit",
+            "description": "The accessibility audit subtask focuses on how accessible the text is to a diverse audience, including individuals with disabilities. It involves examining the text for inclusive language and the availability of accessibility features such as alt text for images. The aim is to ensure that the content is barrier-free and usable by all."
+          },
+          {
+            "name": "Recommendation Formulation",
+            "description": "After a thorough critical review, this subtask focuses on generating constructive recommendations for the author. It entails suggesting improvements on aspects like content development, structure, and style. The objective is to provide actionable advice that enhances the quality and effectiveness of the text."
+          },
+          {
+            "name": "Evidence Evaluation",
+            "description": "The focus of this subtask is to appraise the quality and relevance of the evidence provided in the text. It requires a careful examination of the data, examples, and citations to ascertain their credibility and significance. The goal is to assess how effectively the evidence backs the claims made."
+          },
+          {
+            "name": "Impact Prediction",
+            "description": "The subtask involves estimating the potential impact or influence of the text in its respective field or among its target audience. It assesses the significance and implications of the content. The goal is to predict how the text might shape or contribute to the discourse."
+          }
+        ]
+      },
+      "Grammatical Error Correction": {
+        "descr": "The task of detecting and correcting grammatical errors in a text, which includes fixing issues related to verb tense, subject-verb agreement, sentence structure, punctuation, and other aspects of grammar.",
+        "subtasks": [
+          {
+            "name": "Spelling Correction",
+            "description": "This subtask involves identifying and correcting spelling mistakes throughout the text. It requires a careful examination of each word to ensure it is spelled correctly according to standard dictionaries. The objective is to produce a text that is free of spelling errors, improving its overall readability."
+          },
+          {
+            "name": "Punctuation Correction",
+            "description": "The subtask targets the proper use of punctuation marks such as commas, periods, semicolons, and others. It involves reviewing the text for correct punctuation, ensuring that sentences are well-defined and that the intended meaning is clear. The goal is to ensure clarity and coherence in the text through the accurate placement of punctuation."
+          },
+          {
+            "name": "Subject-Verb Agreement Verification",
+            "description": "This subtask focuses on ensuring that subjects and verbs in sentences agree in number and person. It includes scrutinizing each sentence to confirm that singular subjects have singular verbs and plural subjects have plural verbs. The aim is to create grammatically correct sentences that flow smoothly and make sense."
+          },
+          {
+            "name": "Verb Tense Consistency Check",
+            "description": "The subtask is to maintain consistent verb tenses throughout the text, according to the context and timeline of the events described. It involves identifying and correcting shifts in tense that can confuse the reader or alter the sequence of events. The goal is to achieve temporal coherence and enhance the text's comprehensibility."
+          },
+          {
+            "name": "Sentence Structure Improvement",
+            "description": "This subtask requires rephrasing awkward or complex sentences to improve readability. It involves the reorganization of sentence elements to create a logical and clear structure. The objective is to produce a text with sentences that are easy to follow and understand."
+          },
+          {
+            "name": "Pronoun-Antecedent Agreement",
+            "description": "This subtask emphasizes the correct use of pronouns and their corresponding antecedents in gender, number, and person. It involves scanning the text for pronouns and ensuring they accurately reflect the nouns to which they refer. The aim is to avoid confusion and maintain clarity in the narrative or argument."
+          },
+          {
+            "name": "Capitalization Correction",
+            "description": "The subtask addresses the proper use of capital letters at the beginning of sentences and for proper nouns. It includes a meticulous review of the text to apply capitalization rules accurately. The goal is to ensure that the text adheres to standard grammatical conventions for capitalization."
+          },
+          {
+            "name": "Modifier Placement Adjustment",
+            "description": "This subtask focuses on placing modifiers near the words they modify to prevent confusion. It involves restructuring sentences to position adjectives, adverbs, and other modifiers correctly. The aim is to enhance the clarity and precision of the text."
+          },
+          {
+            "name": "Conjunction Usage Optimization",
+            "description": "The subtask ensures the correct and effective use of conjunctions to form compound and complex sentences. It requires evaluating the text for flow and coherence, using conjunctions to join ideas where appropriate. The goal is to improve the textual flow while maintaining the intended meaning."
+          },
+          {
+            "name": "Preposition Selection",
+            "description": "This subtask involves choosing the correct prepositions to accurately convey location, time, and other relationships between elements in the text. It includes scrutinizing prepositional phrases and making necessary adjustments. The objective is to use prepositions that fit the context and provide clear communication."
+          }
+        ]
+      },
+      "Simplifying Complex Ideas": {
+        "descr": "The process of breaking down and explaining complex concepts or information in a simpler, more understandable way, making them accessible to a broader audience.",
+        "subtasks": [
+          {
+            "name": "Vocabulary Simplification",
+            "description": "This subtask involves replacing complex words and jargon with simpler, more commonly understood terms. The aim is to ensure that the text remains meaningful while becoming more accessible to readers with different levels of understanding. It is crucial to maintain the original information's integrity while simplifying the language."
+          },
+          {
+            "name": "Sentence Structure Simplification",
+            "description": "This subtask focuses on breaking down long and convoluted sentences into shorter, more digestible ones. By doing so, the text becomes clearer and easier to follow. The essence of the original sentences is preserved but communicated in a way that is more straightforward for the reader to comprehend."
+          },
+          {
+            "name": "Conceptual Explanation",
+            "description": "Here, the subtask is to provide clear explanations for complex concepts mentioned in the text. This could involve the use of analogies, metaphors, or real-world examples to make abstract ideas more concrete. The goal is to aid understanding by connecting new information to the reader's existing knowledge."
+          },
+          {
+            "name": "Analogous Comparison",
+            "description": "In this subtask, complex ideas are aligned with more familiar scenarios or concepts through comparison. By drawing parallels to well-understood ideas, the reader can more easily grasp the unfamiliar material. The comparison must be apt and enhance comprehension without oversimplifying the original idea."
+          },
+          {
+            "name": "Sequential Breakdown",
+            "description": "Complex processes or ideas are broken down into sequential steps or stages in this subtask. The aim is to outline a linear path through the information, making it easier to follow and comprehend. Each step is explained individually, contributing to a full understanding of the entire process."
+          },
+          {
+            "name": "Interactive Explanation",
+            "description": "Involves creating an interactive experience, such as a quiz or a set of exercises, that helps readers understand complex ideas through engagement. This method encourages active learning and can aid in the retention of complicated concepts. Interactive elements should be relevant and designed to reinforce the material presented in the text."
+          },
+          {
+            "name": "Simplified Definition",
+            "description": "Focuses on providing simplified definitions for technical terms or complex concepts found in the text. A good definition will convey the essence of a term in plain language, without extensive background knowledge required. This subtask is critical for ensuring that all readers are on the same page regarding the meanings of specialized vocabulary."
+          },
+          {
+            "name": "Topical Segmentation",
+            "description": "Complex material is segmented into distinct topics or categories in this subtask. By organizing the content into smaller, thematically related sections, readers can tackle one concept at a time. This segmentation helps in managing cognitive load and makes the material less intimidating."
+          },
+          {
+            "name": "Narrative Integration",
+            "description": "This subtask entails embedding complex ideas into a narrative or story format. Narratives can make learning more engaging by adding human elements and emotions, which aids in understanding and memory. The story should be crafted in a way that highlights and clarifies the key concepts without distortion."
+          },
+          {
+            "name": "FAQ Compilation",
+            "description": "This subtask focuses on compiling a list of frequently asked questions (FAQs) related to the complex concepts, followed by straightforward answers. This format allows readers to quickly find and understand specific information they are interested in. An effective FAQ section addresses common misunderstandings and clarifies complexities."
+          }
+        ]
+      },
+      "Mathematical Problem Solving": {
+        "descr": "The task of solving mathematical problems or equations, ranging from basic arithmetic to more advanced areas like calculus, statistics, or algebra.",
+        "subtasks": [
+          {
+            "name": "Problem Classification",
+            "description": "This subtask involves categorizing the mathematical problem into a relevant field of mathematics or type of problem. It requires analyzing the problem statement to determine whether it pertains to arithmetic, algebra, geometry, calculus, statistics, etc. The aim is to streamline the problem-solving process by identifying the appropriate methods and formulas."
+          },
+          {
+            "name": "Variable Identification",
+            "description": "The focus here is on pinpointing and labeling all the variables involved in the given mathematical problem. This involves carefully reading the problem statement to find unknowns, constants, and parameters. Establishing what each variable represents is crucial for constructing appropriate equations and solving the problem."
+          },
+          {
+            "name": "Equation Formulation",
+            "description": "The task is to translate the mathematical problem into one or more equations using the identified variables and known information. It involves applying mathematical logic and relevant formulas to create an equation that embodies the problem statement. Proper formulation is the foundation of solving any mathematical problem."
+          },
+          {
+            "name": "Solution Pathway Identification",
+            "description": "This entails outlining a step-by-step approach to solving the mathematical problem. It involves determining the sequence of operations, manipulations, and theorem applications needed. Identifying a clear solution pathway ensures an organized and logical progression toward the solution."
+          },
+          {
+            "name": "Assumption Verification",
+            "description": "Here, the task is to assess any assumptions made during problem analysis and ensure they align with mathematical principles and the problem's constraints. This subtask includes scrutinizing assumptions for validity to prevent logical errors. It is a safeguard against deriving incorrect solutions."
+          },
+          {
+            "name": "Equation Simplification",
+            "description": "This subtask involves reducing complex equations to simpler forms to facilitate easier problem-solving. It requires applying operations like factoring, expanding, and canceling to streamline the equations. Simplifying equations can reveal solutions more directly and clearly."
+          },
+          {
+            "name": "Numerical Calculation",
+            "description": "This involves performing the actual arithmetic or algebraic calculations to progress towards the solution. This subtask includes operations like addition, subtraction, multiplication, division, or applying more advanced mathematical operations. Accuracy in this step is critical to ensure the correctness of the final answer."
+          },
+          {
+            "name": "Solution Checking",
+            "description": "After a solution is found, this subtask comprises revisiting the original problem to verify that the solution is correct. It can involve substituting answers back into the original equations or checking against known constraints. This step is crucial to validate that the solution is indeed correct."
+          },
+          {
+            "name": "Alternative Method Exploration",
+            "description": "This subtask encourages finding different strategies or methods to solve the same problem. It is about applying alternative mathematical approaches to arrive at a solution. This can provide validation for the original answer or offer a more efficient path to the same destination."
+          },
+          {
+            "name": "Result Interpretation",
+            "description": "In this subtask, the solver must interpret the significance of the solution in the context of the problem. It involves explaining what the solution means in practical terms, especially if the problem is applied rather than pure mathematics. Understanding the implications of a solution is as important as finding it."
+          }
+        ]
+      },
+      "Code Analysis": {
+        "descr": "Involves examining, interpreting, and debugging existing code, as well as providing insights on code structure, optimization, and best practices in software development.",
+        "subtasks": [
+          {
+            "name": "Syntax Checking",
+            "description": "This subtask involves scanning the code for syntax errors that prevent it from running correctly. It includes identifying missing semicolons, brackets, or other necessary syntactical elements. The goal is to ensure that the code is free of syntax errors and is thus syntactically valid."
+          },
+          {
+            "name": "Logical Flow Analysis",
+            "description": "The task is centered around understanding and evaluating the logical flow of the code. This includes examining conditionals, loops, and function calls to ensure that the logic is sound and functional. The objective is to verify that the code operates as intended and follows a coherent logic."
+          },
+          {
+            "name": "Code Efficiency Review",
+            "description": "This subtask focuses on identifying areas in the code that could be optimized for better performance. It involves assessing loop efficiencies, algorithm choices, and resource usage. The goal is to suggest improvements that can make the code run faster and more efficiently."
+          },
+          {
+            "name": "Code Style Compliance",
+            "description": "This subtask checks whether the code adheres to industry-standard style guidelines and conventions. It involves reviewing naming conventions, indentation, comment quality, and code organization. The objective is to ensure that the code is readable and maintainable by following consistent coding standards."
+          },
+          {
+            "name": "Dependency Analysis",
+            "description": "The subtask involves examining the code for its dependencies and their impact on the overall system. It checks for both external library dependencies and internal module dependencies. The goal is to identify potential problems related to versioning, licensing, or compatibility."
+          },
+          {
+            "name": "Documentation Review",
+            "description": "This subtask assesses the quality and completeness of the code documentation. It involves ensuring that there is adequate documentation for functions, classes, and modules, and that the documentation accurately reflects the code's functionality. The goal is to make the codebase understandable and usable for other developers."
+          },
+          {
+            "name": "Code Readability Improvement",
+            "description": "The subtask focuses on enhancing the readability and understandability of the code. It looks at variable naming, function decomposition, and overall code structure to make it more approachable. The goal is to refactor the code, where necessary, to make it easier for others to read and maintain."
+          },
+          {
+            "name": "Error Handling Review",
+            "description": "The subtask includes scrutinizing the code's approach to handling errors and exceptions. It assesses how the code manages unexpected conditions or input, and whether it fails gracefully. The objective is to ensure that the code is robust and can handle errors in a controlled and predictable manner."
+          },
+          {
+            "name": "Refactoring for Maintainability",
+            "description": "This subtask consists of modifying the code to improve its internal structure without changing its external behavior. This often includes reducing complexity, eliminating redundancy, and improving naming conventions. The goal is to make the codebase more maintainable and easier to understand."
+          },
+          {
+            "name": "Dependency Analysis",
+            "description": "Analyzing dependencies involves evaluating the code's reliance on external libraries or modules to identify potential issues with versioning, licensing, or deprecation. It requires understanding the project's dependencies and their impact on the system. Ensuring that the codebase uses up-to-date and secure dependencies is vital for robust software."
+          }
+        ]
+      },
+      "Business Analysis and Strategy Development": {
+        "descr": "The process of evaluating business opportunities, analyzing plans and reports, and generating strategic ideas to support business growth, decision-making, and operational efficiency.",
+        "subtasks": [
+          {
+            "name": "Market Trend Identification",
+            "description": "Analyzing a brief text on market dynamics to identify current trends affecting a particular industry or sector."
+          },
+          {
+            "name": "Competitor Strategy Assessment",
+            "description": "Evaluating a paragraph describing a competitor's strategy to determine its potential impacts on the market and the business."
+          },
+          {
+            "name": "SWOT Analysis",
+            "description": "Conducting a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) based on a concise company profile or business scenario."
+          },
+          {
+            "name": "Consumer Behavior Insights",
+            "description": "Extracting insights about consumer behavior and preferences from a short customer feedback or survey excerpt."
+          },
+          {
+            "name": "Product Feature Evaluation",
+            "description": "Reviewing a brief description of a product to assess its features, benefits, and potential market appeal."
+          },
+          {
+            "name": "Financial Health Quick Assessment",
+            "description": "Performing a preliminary analysis of a company's financial health based on a summarized financial statement or data snippet."
+          },
+          {
+            "name": "Operational Efficiency Review",
+            "description": "Evaluating operational processes described in a brief text to identify efficiency improvements or potential bottlenecks."
+          },
+          {
+            "name": "Risk Management Overview",
+            "description": "Assessing potential risks in a business scenario presented in a paragraph, considering factors like market volatility or operational hazards."
+          },
+          {
+            "name": "Supply Chain Analysis",
+            "description": "Analyzing a succinct description of a supply chain process to identify key components and possible vulnerabilities."
+          },
+          {
+            "name": "Innovation Opportunity Spotting",
+            "description": "Identifying opportunities for innovation and improvement from a brief account of current business practices or market conditions."
+          }
+        ]
+      },
+      "Healthcare and Medical Analysis": {
+        "descr": "This task task encompasses a variety of subtasks focused on interpreting and evaluating healthcare and medical-related information",
+        "subtasks": [
+          {
+            "name": "Symptom Interpretation",
+            "description": "Analyzing a short description of symptoms to identify possible medical conditions or illnesses."
+          },
+          {
+            "name": "Medication Effect Analysis",
+            "description": "Evaluating a paragraph describing a medication to determine its potential effects and side effects."
+          },
+          {
+            "name": "Dietary Recommendation Analysis",
+            "description": "Assessing a brief dietary plan or recommendation to identify its suitability for specific health conditions."
+          },
+          {
+            "name": "Preventive Healthcare Suggestions",
+            "description": "Analyzing a text on lifestyle habits to suggest preventive healthcare measures."
+          },
+          {
+            "name": "Laboratory Result Interpretation",
+            "description": "Interpreting a short description of laboratory test results to provide a preliminary analysis."
+          },
+          {
+            "name": "Treatment Plan Evaluation",
+            "description": "Evaluating a brief outline of a treatment plan for its appropriateness for a given medical condition."
+          },
+          {
+            "name": "Health Risk Assessment",
+            "description": "Analyzing a paragraph detailing personal or family medical history to assess potential health risks."
+          },
+          {
+            "name": "Surgical Procedure Analysis",
+            "description": "Reviewing a brief description of a surgical procedure to understand its purpose and potential risks."
+          },
+          {
+            "name": "Vaccine Efficacy Review",
+            "description": "Assessing information on a vaccine to determine its efficacy and suitability for different age groups or health conditions."
+          },
+          {
+            "name": "Physical Therapy Techniques Evaluation",
+            "description": "Analyzing a description of physical therapy techniques to determine their effectiveness for specific injuries or conditions."
+          }
+        ]
+      },
+      "Legal  Analysis": {
+        "descr": "Examining legal documents, cases, and precedents to interpret laws and provide legal insights or strategies.",
+        "subtasks": [
+          {
+            "name": "Identifying Legal Issues",
+            "description": "Analyzing a paragraph to pinpoint specific legal issues or questions presented in a case."
+          },
+          {
+            "name": "Case Fact Summary",
+            "description": "Summarizing the key facts of a legal case based on a brief text description."
+          },
+          {
+            "name": "Argument Strength Assessment",
+            "description": "Evaluating the strength and validity of arguments in a legal paragraph."
+          },
+          {
+            "name": "Legal Precedent Identification",
+            "description": "Identifying any legal precedents or similar cases mentioned in a short text."
+          },
+          {
+            "name": "Statute Interpretation",
+            "description": "Interpreting the meaning and implications of a statute or law referenced in a paragraph."
+          },
+          {
+            "name": "Contract Clause Analysis",
+            "description": "Analyzing a specific clause within a contract described in a brief text."
+          },
+          {
+            "name": "Tort Liability Evaluation",
+            "description": "Assessing potential tort liability based on a short scenario description."
+          },
+          {
+            "name": "Compliance Check",
+            "description": "Determining if the actions described in a paragraph are in compliance with stated legal standards or regulations."
+          },
+          {
+            "name": "Evidence Credibility Review",
+            "description": "Reviewing the credibility or relevance of evidence presented in a brief legal context."
+          },
+          {
+            "name": "Legal Risk Assessment",
+            "description": "Assessing potential legal risks or issues based on a concise description of a business or personal scenario."
+          }
+        ]
+      },
+      "Cybersecurity Threat Assessment": {
+        "descr": "Evaluating texts for potential security threats and vulnerabilities, suggesting measures to enhance security.",
+        "subtasks": [
+          {
+            "name": "Phishing Attempt Identification",
+            "description": "Analyzing a paragraph to determine if it describes a phishing attempt, focusing on key indicators like suspicious links or requests for personal information."
+          },
+          {
+            "name": "Malware Threat Analysis",
+            "description": "Evaluating a brief description to identify potential malware threats, such as viruses or ransomware, mentioned in the text."
+          },
+          {
+            "name": "Data Breach Impact Evaluation",
+            "description": "Analyzing a paragraph to evaluate the potential impact of a described data breach, including the type of data compromised."
+          },
+          {
+            "name": "Password Security Review",
+            "description": "Reviewing a text for password security practices, identifying any weak or risky behaviors described."
+          },
+          {
+            "name": "Social Engineering Recognition",
+            "description": "Identifying instances of social engineering tactics in a paragraph, such as manipulation or deceit used to gain confidential information."
+          },
+          {
+            "name": "Security Policy Compliance Check",
+            "description": "Evaluating a text to determine if the described practices comply with standard cybersecurity policies."
+          },
+          {
+            "name": "Encryption Effectiveness Analysis",
+            "description": "Analyzing a paragraph for mentions of encryption methods and assessing their effectiveness."
+          },
+          {
+            "name": "Insider Threat Identification",
+            "description": "Reviewing a text to identify potential insider threats or risks within an organization."
+          },
+          {
+            "name": "Mobile Security Threat Assessment",
+            "description": "Evaluating a paragraph for potential security threats related to mobile devices and applications."
+          },
+          {
+            "name": "Cloud Security Evaluation",
+            "description": "Analyzing text for cloud computing-related security issues, such as data storage and access vulnerabilities."
+          }
+        ]
+      },
+      "Fiction Analysis": {
+        "descr": "Critically evaluating a piece of fiction, focusing on its narrative structure, character development, and impact.",
+        "subtasks": [
+          {
+            "name": "Character Analysis",
+            "description": "Evaluating the paragraph to understand a character's traits, motivations, or development within the story."
+          },
+          {
+            "name": "Setting Description Interpretation",
+            "description": "Analyzing the text to extract details about the story's setting, including time and place."
+          },
+          {
+            "name": "Narrative Style Assessment",
+            "description": "Evaluating the author's narrative style, including point of view, tone, and language use."
+          },
+          {
+            "name": "Symbolism Detection",
+            "description": "Identifying and interpreting any symbolic elements or metaphors within the text."
+          },
+          {
+            "name": "Conflict Exploration",
+            "description": "Analyzing the paragraph to understand the central conflict or challenges faced by characters."
+          },
+          {
+            "name": "Plot Development Analysis",
+            "description": "Assessing how the events in the paragraph contribute to the overall plot development."
+          },
+          {
+            "name": "Dialogue Interpretation",
+            "description": "Evaluating the dialogue in the text to gain insights into character relationships and dynamics."
+          },
+          {
+            "name": "Mood and Atmosphere Analysis",
+            "description": "Determining the mood or atmosphere conveyed in the paragraph and how it contributes to the narrative."
+          },
+          {
+            "name": "Genre Classification",
+            "description": "Classifying the paragraph into a specific fiction genre based on the elements presented."
+          },
+          {
+            "name": "Literary Device Identification",
+            "description": "Identifying literary devices such as foreshadowing, irony, or alliteration used in the text."
+          }
+        ]
+      }
+    },
+    "Information Processing and Retrieval": {
+      "descr": "This category includes classical NLP tasks that involve the handling, interpretation, and retrieval of information. It encompasses activities where the primary goal is to manage and utilize existing knowledge or data.",
+      "Factual Question Answering": {
+        "descr": "Responding to queries with accurate, specific information based on available data or known facts.",
+        "subtasks": [
+          {
+            "name": "Direct Answer Extraction",
+            "description": "This subtask involves scanning the text to find and extract a concise, direct answer to a specific factual question. It requires pinpointing exact phrases or data within the text that directly respond to the query. The goal is to provide a straightforward and precise answer without additional commentary or explanation."
+          },
+          {
+            "name": "Data Synthesis for Answering",
+            "description": "This subtask entails combining disparate pieces of information from the text to formulate a cohesive answer to a factual question. It may involve correlating dates, events, or statistical data to provide a comprehensive response. The objective is to synthesize available information to answer questions that cannot be responded to with a single fact."
+          },
+          {
+            "name": "Contextual Clarification",
+            "description": "This task is about providing the necessary background or contextual details that are crucial for understanding the answer to a factual question. It involves distinguishing and conveying the context in which the facts are presented in the text. The purpose is to ensure that the answer is clear and meaningful within the larger framework of the subject matter."
+          },
+          {
+            "name": "Definitional Response",
+            "description": "The aim of this subtask is to offer a definition or explanation of terms or concepts asked about in the factual question. It requires extracting and reformulating descriptions or definitions from the text. The goal is to aid understanding by defining any technical or specialized terms relevant to the question."
+          },
+          {
+            "name": "Historical Information Retrieval",
+            "description": "When a factual question pertains to historical data within the text, this subtask focuses on retrieving and presenting that information accurately. It may involve identifying dates, timelines, and significant events. The objective is to provide answers that accurately reflect the historical aspect of the question."
+          },
+          {
+            "name": "Quantitative Information Extraction",
+            "description": "This subtask concentrates on locating and extracting numerical data, statistics, or quantities from the text that are requested in a factual question. It requires an understanding of numerical figures and their relevance to the inquiry. The purpose is to deliver precise numerical answers to fact-based questions."
+          },
+          {
+            "name": "Causal Explanation",
+            "description": "This subtask aims to explain the cause-and-effect relationships present in the text in response to factual questions about why something occurred. It involves deducing and elucidating the causal links between events or phenomena described in the text. The goal is to provide a clear explanation of the causes behind the queried effect."
+          },
+          {
+            "name": "Procedure Outline",
+            "description": "For factual questions regarding procedures or processes described in the text, this subtask focuses on outlining the steps or stages in a clear and logical sequence. It requires distillation of the process into a clear, concise, and orderly format. The aim is to provide a step-by-step answer that captures the procedure's essence."
+          },
+          {
+            "name": "Geographic Information Response",
+            "description": "This subtask targets the identification and provision of geographic details in response to location-based factual questions. It involves parsing the text for place names, geographical features, or spatial relationships. The objective is to deliver accurate geographic information as per the question's focus."
+          },
+          {
+            "name": "Person-Related Facts Identification",
+            "description": "When factual questions pertain to individuals mentioned in the text, this subtask revolves around identifying and presenting facts related to those persons. It includes pinpointing biographical data, contributions, or any relevant personal details. The goal is to answer questions specifically about people with accurate information from the text."
+          }
+        ]
+      },
+      "Text Summarization": {
+        "descr": "Condensing lengthy texts into concise summaries, capturing the essential points.",
+        "subtasks": [
+          {
+            "name": "Abstract Summarization",
+            "description": "This subtask aims to generate an abstract, or self-contained, summary that presents the core points of the text without necessarily using the original text's words or phrases. It challenges the summarizer to paraphrase and condense content independently. The goal is to create an entirely new summary that stands on its own while accurately reflecting the text's information."
+          },
+          {
+            "name": "Executive Summarization",
+            "description": "The executive summarization subtask is designed to craft summaries suited for executives or decision-makers, focusing on the most critical information affecting business or operational decisions. It requires identifying and emphasizing data, results, and actionable insights. The summary must be succinct, highlight vital statistics or facts, and aim to support efficient decision-making."
+          },
+          {
+            "name": "Comparative Summarization",
+            "description": "This subtask involves creating summaries that compare and contrast key elements or viewpoints presented in the text. It requires the identification of similarities and differences within the material. The result is a summary that helps the reader understand varying perspectives or competing information on the same topic."
+          },
+          {
+            "name": "Critical Summarization",
+            "description": "Critical summarization involves analyzing and summarizing text with a critical eye, questioning underlying assumptions or potential biases. It aims to present a balanced view by considering various perspectives and critiques. This subtask is essential for creating summaries that offer depth and a comprehensive understanding of the text's context and implications."
+          },
+          {
+            "name": "Technical Summarization",
+            "description": "Technical summarization requires distilling complex, technical texts into more accessible summaries without losing key technical details. It involves translating specialized jargon into language that is understandable to a broader audience. The summary should accurately convey the original text's technical content in a form that is both concise and clear to non-experts."
+          },
+          {
+            "name": "Narrative Summarization",
+            "description": "Narrative summarization focuses on condensing stories, plots, or accounts into their most essential narrative elements. It aims to preserve the story arc and key character developments while removing extraneous details. The outcome is a short narrative that captures the spirit and progression of the original storytelling."
+          },
+          {
+            "name": "Subjective Summarization",
+            "description": "Subjective summarization allows for the inclusion of the summarizer's interpretations, opinions, or reactions to the text. It involves providing a personal touch to the summary, highlighting what the summarizer found most compelling or relevant. This subtask is particularly useful for texts where personal engagement or opinion adds value, such as in book reviews or editorial commentaries."
+          },
+          {
+            "name": "Sentiment Summarization",
+            "description": "Sentiment summarization identifies and conveys the emotions or sentiments expressed in the text. The subtask involves detecting the tone, mood, and attitudes present and succinctly summarizing them. This type of summary aids in quickly understanding the emotional content or stance of the original material."
+          },
+          {
+            "name": "Informative Summarization",
+            "description": "Informative summarization prioritizes the conveyance of factual information and data contained within the text. This subtask focuses on distilling figures, statistics, and verifiable facts into a compact summary. It is crucial for texts where factual accuracy and data density are more important than narrative or opinion."
+          },
+          {
+            "name": "Instructional Summarization",
+            "description": "Instructional summarization is about summarizing texts that contain instructions or procedural information. It aims to streamline the steps, rules, or guidelines presented, ensuring the essential details for performing a task remain clear and actionable. This subtask is critical for creating concise how-to guides, manuals, or recipes."
+          }
+        ]
+      },
+      "Information Extraction": {
+        "descr": "Identifying and extracting key pieces of information from a larger dataset or complex texts.",
+        "subtasks": [
+          {
+            "name": "Named Entity Recognition",
+            "description": "This subtask involves scanning the text to find and label entities such as names of people, organizations, locations, dates, and other specific information. The process includes categorizing these entities based on their types and significance within the text. The goal is to structure unstructured data for easy access to particular details."
+          },
+          {
+            "name": "Key Phrase Extraction",
+            "description": "This subtask is focused on identifying important phrases within the text that capture significant themes or concepts. It usually involves algorithms that can detect relevance and frequency of phrases. The end result is a list of phrases that provide insight into the text's main points."
+          },
+          {
+            "name": "Fact Extraction",
+            "description": "The aim of this subtask is to identify and extract factual statements from the text. This involves discerning between opinions and factual data, ensuring that the extracted information is objective and verifiable. The outcome is a collection of facts that can be used for data validation or knowledge base development."
+          },
+          {
+            "name": "Event Extraction",
+            "description": "Event Extraction is about finding mentions of events within the text and detailing their characteristics, such as time, location, participants, and nature of the event. The goal is to create a timeline or database of events for further analysis or record-keeping. This helps in understanding the sequence and impact of occurrences mentioned in the text."
+          },
+          {
+            "name": "Pattern Recognition",
+            "description": "This subtask entails identifying recurring patterns or anomalies within the text. By analyzing frequency and co-occurrence of words or phrases, patterns can be detected, which may reveal hidden structures or meanings. This forms the basis for more advanced text analysis and data mining."
+          },
+          {
+            "name": "Keyword Extraction",
+            "description": "The goal is to extract the most relevant and significant words from the text that are key to understanding its content. This typically involves statistical analysis to identify high-frequency and relevant terms. Keywords serve as a quick reference to the text's main points."
+          },
+          {
+            "name": "Concept Linking",
+            "description": "This subtask requires mapping the extracted information to existing concepts in a knowledge base. It is about finding connections between the text and known concepts to enrich the content with external data. This linking process aids in deepening the context and understanding of the text."
+          },
+          {
+            "name": "Anomaly Detection",
+            "description": "The subtask is to identify outlying pieces of information or data that deviate from the norm within the text. It involves recognizing inconsistencies or unexpected occurrences. Detecting anomalies can help in catching errors, fraud, or highlighting areas for further investigation."
+          },
+          {
+            "name": "Relationship Extraction",
+            "description": "This subtask is concerned with detecting and extracting semantic relationships between the identified entities within the text. It seeks to understand the connections or associations between different entities, such as who did what to whom, when and where. The result is a network of relationships that can be used for further analysis or knowledge discovery."
+          },
+          {
+            "name": "Causal Relationship Identification",
+            "description": "The aim here is to identify cause-and-effect relationships within the text, which may not be explicitly stated. Understanding these relationships can provide insights into the underlying reasons for certain events or actions. This subtask is key for deep text analysis and reasoning."
+          }
+        ]
+      },
+      "Translation": {
+        "descr": "Converting text or speech from one language to another while maintaining the original meaning and context.",
+        "subtasks": [
+          {
+            "name": "Literal Translation",
+            "description": "This subtask involves translating the text word-for-word from the source language to the target language. It pays close attention to the original grammar and vocabulary without adding interpretation or stylistic changes. The objective is to produce a translation that is as close as possible to the exact wording of the original text. Translate from English to French."
+          },
+          {
+            "name": "Localized Translation",
+            "description": "This subtask requires adapting the text to the cultural and regional nuances of the target language audience. It goes beyond literal translation to include local idioms, expressions, and references that are familiar to the target audience. The goal is to create a translation that feels natural and culturally relevant to native speakers. Translate from English to Russian."
+          },
+          {
+            "name": "Technical Translation",
+            "description": "The focus of this subtask is on texts that contain specialized vocabulary, such as scientific, engineering, or legal documentation. It necessitates a deep understanding of the subject matter to accurately convert technical terms and concepts. The aim is to provide a precise and clear translation that maintains the integrity of the specialized content. Translate from German to French."
+          },
+          {
+            "name": "Simplified Translation",
+            "description": "This subtask aims to translate text into a simpler version of the target language, making it more accessible to individuals with limited proficiency in the language. It involves using basic vocabulary and sentence structures while preserving the original message. The goal is to make the information understandable to a wider audience. Translate from English to Mandarin."
+          },
+          {
+            "name": "Artistic Translation",
+            "description": "Artistic translation is about conveying the original style, tone, and emotions of the source text in the target language. It is particularly important for works of literature, poetry, and other creative texts. The objective is to produce a translation that resonates with the target audience as strongly as the original text did with its audience. Translate from Finnish to Russian."
+          },
+          {
+            "name": "Dynamic Equivalence Translation",
+            "description": "This subtask focuses on translating the meaning and intent of the source text rather than adhering strictly to its words and structure. It aims to evoke the same response in the target audience as the original text did. The priority is to ensure that the translation is equivalent in effect, though it may differ in form. Translate from French to English."
+          },
+          {
+            "name": "Legal Translation",
+            "description": "Legal translation is a subtask that requires dealing with legal documents such as contracts, statutes, and litigation materials. It demands high precision and an understanding of legal terminology and concepts in both source and target languages. The goal is to produce a translation that is legally sound and can be used in a legal context. Translate from Spanish to Russian."
+          },
+          {
+            "name": "Medical Translation",
+            "description": "Medical translation specializes in translating healthcare-related documents, such as clinical study reports, patient records, and medical device manuals. It requires knowledge of medical terminology and compliance with regulatory standards. The goal is to deliver accurate and accessible translations for healthcare professionals and patients. Translate from English to French."
+          },
+          {
+            "name": "Semantic Translation",
+            "description": "Semantic translation prioritizes the meaning and concepts behind the words of the original text. The translator interprets the text and renders it in the target language with the intent to convey the same ideas. The goal is to maintain the integrity of the original message within the cultural context of the target language. Translate from German to Mandarin."
+          },
+          {
+            "name": "Transcreation",
+            "description": "Transcreation goes beyond translation to include the creation of new content within the target language, often for marketing and advertising purposes. It blends translation with copywriting to produce culturally and emotionally engaging content. The aim is to recreate the message in a way that resonates with the target audience\u2019s cultural context and expectations. Translate from English to Polish."
+          }
+        ]
+      },
+      "Document Classification": {
+        "descr": "Categorizing documents into predefined classes based on their content, such as spam detection in emails.",
+        "subtasks": [
+          {
+            "name": "Topic Identification",
+            "description": "In this subtask, the goal is to determine the main topic or topics that the document covers. It requires a review of the document to discern its overarching subject matter. This helps in classifying the document into a category that best represents its primary focus."
+          },
+          {
+            "name": "Language Detection",
+            "description": "This subtask involves identifying the language in which the document is written. It requires analyzing the text for language-specific characters, words, and sentence structures. Knowing the language is crucial for applying the correct classification models and for documents that are sorted by language."
+          },
+          {
+            "name": "Authorship Attribution",
+            "description": "Authorship attribution focuses on analyzing the writing style to hypothesize the potential author of the document. It looks at linguistic features, such as word choice and syntax. This can be particularly useful in classifying anonymous or disputed texts."
+          },
+          {
+            "name": "Text Complexity Assessment",
+            "description": "This subtask aims to evaluate the level of complexity in the document's language and structure. It involves analyzing factors like vocabulary difficulty, sentence length, and overall readability. Classifying documents by complexity can help in targeting the appropriate audience."
+          },
+          {
+            "name": "Genre Classification",
+            "description": "The objective here is to categorize the document based on its genre, such as fiction, non-fiction, news article, or academic paper. It requires distinguishing textual characteristics that are typical of different genres. This classification helps in organizing content according to its form and purpose."
+          },
+          {
+            "name": "Functionality Determination",
+            "description": "This subtask seeks to classify the document by its intended function or use, such as informative, persuasive, or instructional. By analyzing the document's content and style, one can discern its primary purpose. This is vital for understanding and categorizing documents by their function within communication."
+          },
+          {
+            "name": "Length Classification",
+            "description": "Length classification involves categorizing documents by their size, such as short, medium, or long texts. The subtask includes counting the number of words or characters. This information can be beneficial for allocating reading time or for filtering content based on length preferences."
+          },
+          {
+            "name": "Time Period Analysis",
+            "description": "This subtask focuses on determining the time period or era that the document relates to or was created in. It involves analyzing historical references, language evolution, and context clues. Classifying documents by time period can be crucial for historical analysis and temporal categorization."
+          },
+          {
+            "name": "Audience Targeting",
+            "description": "The subtask aims to identify the intended audience of the document, such as children, adults, professionals, or the general public. This involves examining the content for clues about the target demographic. Knowing the audience is important for classifying content by its suitability for different reader groups."
+          },
+          {
+            "name": "Formality Level Rating",
+            "description": "This subtask assesses the degree of formality in the document's language, categorizing it as formal, informal, or colloquial. It looks at the use of jargon, slang, and the overall tone. Recognizing the formality level aids in classifying professional versus casual communications."
+          }
+        ]
+      },
+      "Keyword Extraction": {
+        "descr": "Identifying and extracting the most relevant or significant words or phrases from a text.",
+        "subtasks": [
+          {
+            "name": "Frequency-Based Keyword Extraction",
+            "description": "This subtask involves identifying keywords based on the frequency of their occurrence within the text. It entails counting words, ranking them according to how often they appear, and selecting the most frequent as the probable keywords. The goal is to capture the most repeated concepts or terms that could reflect the text's primary focus."
+          },
+          {
+            "name": "Contextual Keyword Extraction",
+            "description": "The aim of this subtask is to extract keywords that are relevant to the context of the text, even if they do not have the highest frequency of appearance. It involves analyzing the context in which words are used to determine their significance. This method prioritizes meaning over mere frequency, focusing on the importance of terms within particular sections or topics."
+          },
+          {
+            "name": "Semantic Keyword Extraction",
+            "description": "Semantic extraction is about finding keywords that carry the core meaning of the text, often using advanced linguistic and statistical models. This process involves understanding synonyms, word relationships, and the broader topics the text discusses. The goal is to identify keywords that represent the essence of the content semantically, not just syntactically."
+          },
+          {
+            "name": "Co-occurrence Keyword Extraction",
+            "description": "This subtask determines keywords by identifying words that frequently appear in close proximity to each other. By mapping these co-occurrences, it helps in revealing the network of terms that jointly contribute to the main subject of the text. This approach is effective for finding groups of words that, together, form significant concepts within the document."
+          },
+          {
+            "name": "Collocation Extraction",
+            "description": "Collocation extraction focuses on capturing common word pairings or sequences that tend to occur together more frequently than by chance. It helps in identifying idiomatic expressions or fixed phrases within the text. The result is a set of collocated terms that enhance the understanding of the text's language patterns."
+          },
+          {
+            "name": "Part-of-Speech Filtering",
+            "description": "Keywords are extracted based on specific parts of speech, such as nouns, adjectives, or verbs, using grammatical tagging. This approach assumes that certain parts of speech are more likely to contain keywords that define the content of the text. The process filters and highlights terms that play a significant role in conveying the message."
+          },
+          {
+            "name": "Trend-Related Keyword Extraction",
+            "description": "This subtask aims to identify keywords that are currently trending or have gained relevance over a period of time. It involves comparing the text against a dataset of time-sensitive terms and phrases. The goal is to discover and extract keywords that resonate with ongoing trends or events."
+          },
+          {
+            "name": "Domain-Specific Keyword Extraction",
+            "description": "Extraction of keywords with respect to a specific domain or field of study, utilizing specialized vocabulary. This process requires an understanding of the subject matter to accurately identify terms that are crucial within a particular area. Keywords found through this method are tailored to industry experts or an audience familiar with the field."
+          },
+          {
+            "name": "Weighted Keyword Extraction",
+            "description": "Keywords are extracted based on their weighted importance within the text, which might be determined by algorithms like TF-IDF (Term Frequency-Inverse Document Frequency). This approach emphasizes terms that are unique and significant across a collection of documents, thus distinguishing the importance of keywords within the context of the larger dataset. The objective is to pinpoint keywords that uniquely characterize the text."
+          },
+          {
+            "name": "Pattern-Based Keyword Extraction",
+            "description": "This subtask employs pattern recognition to identify and extract keywords, often based on predefined or discovered templates and structures within the text. It might use regular expressions or other pattern-matching techniques to pinpoint keywords that adhere to certain syntactic patterns. The focus is on systematic discovery of keywords through structural analysis."
+          }
+        ]
+      },
+      "Named Entity Recognition": {
+        "descr": "Identifying and classifying key entities in the text, such as names of people, places, organizations, dates, and other specifics.",
+        "subtasks": [
+          {
+            "name": "Person Entities Extraction",
+            "description": "This subtask involves identifying all the proper nouns that refer to people within the text. It requires the recognition of names and sometimes titles, distinguishing them from other entities. The aim is to generate a list of all individual persons mentioned in the text."
+          },
+          {
+            "name": "Location Entities Extraction",
+            "description": "The subtask focuses on pinpointing geographical entities within the text, such as countries, cities, landmarks, and natural features. It includes distinguishing these from non-geographical names. The goal is to catalog every mentioned location."
+          },
+          {
+            "name": "Organization Entities Extraction",
+            "description": "This subtask seeks to identify all mentions of institutions, companies, governments, and other organized groups. It involves distinguishing these from other entities within the text. The output is a list of all organizations mentioned."
+          },
+          {
+            "name": "Temporal Entities Extraction",
+            "description": "The focus here is on identifying all time-related entities, including dates, days, months, years, and even specific times of events. It separates these temporal indicators from other numerical information. The task results in a compilation of all time references."
+          },
+          {
+            "name": "Monetary Entities Extraction",
+            "description": "This subtask aims to locate and classify all mentions of money, including currencies, amounts, and financial terms. It requires differentiating monetary references from other numerical data. This creates a record of all financial entities."
+          },
+          {
+            "name": "Statistical Entities Extraction",
+            "description": "The purpose of this subtask is to extract all statistical data, such as percentages, numerical data, and quantifiable measures. It focuses on distinguishing this information from other non-statistical content. It results in a collection of all statistical figures mentioned."
+          },
+          {
+            "name": "Product Entities Extraction",
+            "description": "This subtask targets the identification of product names, brands, and associated trademarks mentioned in the text. It differentiates these product references from other entities. The task compiles a list of all products identified."
+          },
+          {
+            "name": "Event Entities Extraction",
+            "description": "The subtask aims to single out references to specific events, historical milestones, or occurrences. It involves distinguishing event names from generic activities. A summary of all notable events mentioned is compiled."
+          },
+          {
+            "name": "Legal Entities Extraction",
+            "description": "The objective here is to locate any mention of legal documents, laws, treaties, court cases, or legal terms. It necessitates differentiating between legal references and general text. A list of legal entities cited in the text is produced."
+          },
+          {
+            "name": "Artistic Entities Extraction",
+            "description": "This subtask focuses on the identification of titles and names related to art, such as books, movies, paintings, and songs. It requires the differentiation of these from regular text. The end goal is to compile all artistic references."
+          }
+        ]
+      },
+      "Sentiment Analysis": {
+        "descr": "Determining the emotional tone of the text, categorizing it as positive, negative, or neutral.",
+        "subtasks": [
+          {
+            "name": "Polarity Identification",
+            "description": "This subtask involves identifying the overall sentiment polarity of the text, without delving into the specifics of emotion or intensity. It aims to classify the text into broad categories such as positive, negative, or neutral. The result provides a quick and general sense of the emotional tone conveyed by the text."
+          },
+          {
+            "name": "Emotion Detection",
+            "description": "The aim of this subtask is to detect specific emotions, such as joy, anger, sadness, or surprise, that are expressed in the text. It goes beyond simple polarity to understand the nuances of emotional expression. Doing so can provide deeper insights into the text's emotional subtext and the author's intent."
+          },
+          {
+            "name": "Intensity Scoring",
+            "description": "This subtask quantifies the intensity or strength of the sentiments expressed in the text. It typically involves assigning a numerical score that reflects the degree of positive or negative feeling. This can be particularly useful for comparing sentiments across multiple texts or monitoring shifts in tone over time."
+          },
+          {
+            "name": "Subjectivity/Objectivity Identification",
+            "description": "Determining whether the text is subjective (expressing personal opinions or emotions) or objective (stating facts without bias) is the goal of this subtask. This helps in distinguishing between factual information and personal commentary. It's useful in various applications like news analysis and product reviews."
+          },
+          {
+            "name": "Sentiment Trend Analysis",
+            "description": "This subtask entails tracking the changes in sentiment over a series of texts or over time to identify trends. It can reveal how sentiments shift in response to events or within ongoing conversations. Such analyses are valuable for monitoring public opinion or brand sentiment evolution."
+          },
+          {
+            "name": "Comparative Sentiment Analysis",
+            "description": "This subtask involves comparing the sentiment of two or more texts to discern relative sentiment. It can highlight which of the compared entities is perceived more positively or negatively. This comparison is particularly relevant for competitive analysis in business scenarios."
+          },
+          {
+            "name": "Sarcasm Detection",
+            "description": "A specialized task focusing on identifying sarcasm, where the literal meaning is opposite to the intended sentiment. Sarcasm detection is challenging but essential for accurate sentiment analysis, as it changes the sentiment polarity. Accurate detection prevents misinterpretation of the text's true sentiment."
+          },
+          {
+            "name": "Contextual Sentiment Analysis",
+            "description": "This subtask requires understanding the context in which the sentiment is expressed to accurately assess its meaning. It considers the surrounding text, situational context, and cultural factors. Contextual analysis helps in handling ambiguous cases where sentiment might not be clear at first glance."
+          },
+          {
+            "name": "Sentiment Lexicon Expansion",
+            "description": "The objective here is to identify and add new sentiment-bearing words or phrases to an existing sentiment lexicon. This involves processing the text to discover novel expression of sentiments. It's a crucial step for updating sentiment analysis models to adapt to evolving language use."
+          },
+          {
+            "name": "Multi-Lingual Sentiment Analysis",
+            "description": "This subtask is the application of sentiment analysis to text in multiple languages. It helps in understanding the sentiment of text without language barriers. Multi-lingual sentiment analysis is particularly useful for global platforms and diverse datasets."
+          }
+        ]
+      },
+      "Theme Identification": {
+        "descr": "Determining central themes or topics discussed in the text.",
+        "subtasks": [
+          {
+            "name": "Explicit Theme Extraction",
+            "description": "Identify and list the explicit themes directly stated or clearly evident in the text. This involves scanning the text for key phrases and statements that directly relate to the central subjects. The objective is to catalog themes that are openly presented by the author."
+          },
+          {
+            "name": "Implicit Theme Exploration",
+            "description": "Examine the text for underlying themes that are not directly stated but implied through context, symbolism, or character actions. This requires a deeper analysis of the text to interpret the subtler messages conveyed. The goal is to reveal themes that are suggested rather than straightforwardly discussed."
+          },
+          {
+            "name": "Comparative Theme Analysis",
+            "description": "Compare and contrast themes within the text or across different texts. This task involves identifying similarities and differences in how themes are presented and developed. It aims to provide insight into the various ways themes manifest and interact with each other."
+          },
+          {
+            "name": "Character-Driven Theme Analysis",
+            "description": "Analyze how the actions, development, and interactions of characters underscore the text's themes. This includes examining character arcs and relationships to understand their thematic significance. The aim is to elucidate how character dynamics inform the central themes."
+          },
+          {
+            "name": "Setting as a Theme Indicator",
+            "description": "Explore how the time and place settings of the text contribute to its thematic elements. This task involves detailing the ways in which the setting reflects or enhances the text's themes. It is intended to uncover the relationship between setting and theme."
+          },
+          {
+            "name": "Historical Context Theme Analysis",
+            "description": "Assess how the themes of the text relate to its historical context, including the time period it was written or the time period it represents. This requires knowledge of the relevant historical background to determine its influence on the themes. The goal is to reveal the interplay between the text and its historical framework."
+          },
+          {
+            "name": "Cultural Influence on Themes",
+            "description": "Evaluate the impact of cultural aspects, such as beliefs, values, and norms, on the thematic content of the text. This includes understanding how cultural context shapes the expression of themes. It aims to shed light on the cultural dimensions of theme development."
+          },
+          {
+            "name": "Authorial Intent and Theme Exploration",
+            "description": "Investigate the author's purpose and how it informs the themes present in the text. This involves an analysis of the author's background, previous works, and possible intentions. The goal is to link the author's motives to the thematic structure of the text."
+          },
+          {
+            "name": "Genre-Based Theme Analysis",
+            "description": "Determine the typical themes associated with the genre of the text and identify how the text aligns or deviates from these norms. This requires an understanding of genre conventions and how they influence thematic expression. The objective is to contextualize the text within its genre."
+          },
+          {
+            "name": "Reader Response Theme Interpretation",
+            "description": "Focus on how different readers might interpret the themes of the text based on their personal backgrounds and experiences. This subtask acknowledges that individual perspectives can vary widely, leading to diverse thematic interpretations. The aim is to address the subjective nature of theme identification."
+          }
+        ]
+      },
+      "Part-of-Speech Tagging": {
+        "descr": "The process of identifying and labeling each word in a text with its corresponding part of speech, such as noun, verb, adjective, etc., based on both its definition and context within the sentence.",
+        "subtasks": [
+          {
+            "name": "Noun Identification",
+            "description": "This subtask entails identifying all the nouns within the text. It requires parsing each sentence to isolate every noun, whether proper, common, abstract, or collective. The goal is to produce a list or a tagged text highlighting only the noun elements."
+          },
+          {
+            "name": "Verb Identification",
+            "description": "This subtask involves pinpointing every verb within the text. The task demands an analysis of sentences to detect action words, states of being, and auxiliary verbs. The end product is a list or a tagged version of the text showcasing all the verbs."
+          },
+          {
+            "name": "Adjective Identification",
+            "description": "The purpose of this subtask is to locate and label all adjectives in the text. It necessitates scrutinizing sentence structure to highlight words that describe or modify nouns. The output is a compilation or a modified version of the text with adjectives clearly marked."
+          },
+          {
+            "name": "Adverb Identification",
+            "description": "This subtask concentrates on finding all adverbs within the text. It involves examining sentences to spot words that modify verbs, adjectives, or other adverbs. The result is a tagged text or collection where each adverb is clearly indicated."
+          },
+          {
+            "name": "Pronoun Resolution",
+            "description": "This subtask aims to resolve all pronouns to their antecedents or the terms they refer to in the text. It requires careful analysis to connect each pronoun to its correct noun, ensuring clarity. The task leads to a text where pronoun references are explicitly stated."
+          },
+          {
+            "name": "Determiner Tagging",
+            "description": "The objective of this subtask is to tag determiners, which are words that introduce nouns. It involves the identification of articles, possessive pronouns, and other determiners setting up noun phrases. The deliverable is a version of the text where all determiners are labeled."
+          },
+          {
+            "name": "Preposition Recognition",
+            "description": "This subtask is about identifying prepositions that connect nouns, pronouns, or phrases to other words within a sentence. It requires analysis of the text to find these relational words. The output is a text with all prepositions marked for their roles in indicating relationships."
+          },
+          {
+            "name": "Conjunction Categorization",
+            "description": "This subtask focuses on categorizing conjunctions within the text into coordinating, subordinating, or correlative. It entails examining sentence structure and context. The goal is a tagged text reflecting the function and type of each conjunction."
+          },
+          {
+            "name": "Interjection Detection",
+            "description": "This subtask is designed to spot interjections throughout the text. It searches for expressions of emotion or exclamations that are often grammatically independent. The result is a tagged text with all interjections clearly indicated."
+          },
+          {
+            "name": "Modal Auxiliary Verb Tagging",
+            "description": "The subtask aims to tag modal auxiliary verbs, which express necessity or possibility. It involves identifying words like 'can', 'will', 'must', and 'should' that modify the main verb for mood. The output is a text with modal auxiliaries distinctly tagged."
+          }
+        ]
+      }
+    }
+  }
+}

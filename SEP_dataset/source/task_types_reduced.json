@@ -1,0 +1,18 @@
+{
+  "descr": "These are three most general types of tasks",
+  "Information Processing and Retrieval": {
+    "descr": "This category includes classical NLP tasks that involve the handling, interpretation, and retrieval of information. It encompasses activities where the primary goal is to manage and utilize existing knowledge or data.",
+    "Text Summarization": "Condensing lengthy texts into concise summaries, capturing the essential points.",
+    "Information Extraction": "Identifying and extracting key pieces of information from a larger dataset or complex texts."
+    },
+  "Creative and Generative Tasks": {
+    "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+    "Textual Adaptation and Transformation": "Involves modifying existing texts to create new versions, such as developing alternative endings for stories, converting texts into different genres, or reimagining narratives from new perspectives.",
+    "Culinary Assistance and Guidance": "Providing support and advice in cooking processes, including recipe selection, ingredient substitution, cooking techniques, and presentation tips."
+    },
+  "Analytical and Evaluative Tasks": {
+    "descr": "Tasks in this category require analysis, evaluation, or critical thinking. They involve interpreting information, making judgments, or providing reasoned arguments.",
+    "Mathematical Problem Solving": "The task of solving mathematical problems or equations, ranging from basic arithmetic to more advanced areas like calculus, statistics, or algebra.",
+    "Healthcare and Medical Analysis": "Examining healthcare practices, medical treatments, or patient data to improve health outcomes and care efficiency."
+    }
+}

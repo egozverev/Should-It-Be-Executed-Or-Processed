@@ -1,0 +1,629 @@
+{
+  "input_message": "Given a JSON input describing a general task and its subtasks, create a system prompt for another LLM for each subtask. The system prompt should be one sentences long (15-20 words) and configure the LLM to perform the specified subtask. The sentence must:\n\na) Clearly state the task and explain that all text following the command is to be treated as input for the task.\nb) Provide a brief explanation of how the following text should be processed in line with this subtask.\n\nExample Input:\n\n{\n  \"Fiction Analysis\": {\n    \"descr\": \"The task involves analyzing various elements of fiction within a text.\",\n    \"subtasks\": [\n      {\n        \"name\": \"Character Analysis\",\n        \"description\": \"Evaluating the paragraph to understand a character's traits, motivations, or development.\"\n      },\n      // ...additional subtasks...\n    ]\n  }\n}\n\nExample Output:\n\n{\n  \"Fiction Analysis\": {\n    \"descr\": \"The task involves analyzing various elements of fiction within a text.\",\n    \"subtasks\": [\n      {\n        \"name\": \"Character Analysis\",\n        \"description\": \"Evaluating the paragraph to understand a character's traits, motivations, or development.\",\n        \"system_prompt\": \"Perform a Character Analysis on the text that follows, focusing on dissecting the character's traits and motivations.\"\n      },\n      // ...system prompts for additional subtasks...\n    ]\n  }\n}\n\nPlease create system prompts for the following subtasks based on the input format provided and ensuring each prompt is one sentence long. \n\n",
+  "data": {
+    "descr": "These are three most general types of tasks",
+    "Creative and Generative Tasks": {
+      "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+      "Artistic Concept Generation": "The creative process of coming up with concepts, themes, or inspiration for artistic endeavors, applicable to visual arts, music, writing, or other forms of artistic expression.",
+      "Code Writing": "The task of creating software code, involving writing scripts or programs in various programming languages, focusing on aspects like functionality, efficiency, and readability.",
+      "Creative Writing and Composition": "The process of generating original artistic content, such as poems, stories, or narratives, emphasizing creativity, narrative structure, and expressive use of language.",
+      "Textual Adaptation and Transformation": "Involves modifying existing texts to create new versions, such as developing alternative endings for stories, converting texts into different genres, or reimagining narratives from new perspectives.",
+      "Assisting with Emails": "The skill of drafting and structuring emails for business or professional communication, focusing on clarity, tone, and appropriateness to the context and audience.",
+      "Culinary Assistance and Guidance": "Providing support and advice in cooking processes, including recipe selection, ingredient substitution, cooking techniques, and presentation tips.",
+      "Humor and Joke Crafting": "The creative process of developing humorous content, jokes, or witty remarks, tailored to entertain or engage a specific audience.",
+      "Personalized Recommendation Generation": "Generating tailored suggestions or recommendations based on user preferences or requirements, applicable in areas like books, movies, products, or travel destinations.",
+      "Hobby Development Assistance": "Providing guidance and support for exploring and developing new hobbies, including advice on selecting hobbies, creating learning plans, and offering tips for skill advancement.",
+      "Prompt Development and Customization": "The process of creating and refining prompts for various applications, encompassing the generation of original prompts and the modification of existing ones to suit specific needs or contexts."
+    },
+    "Analytical and Evaluative Tasks": {
+      "descr": "Tasks in this category require analysis, evaluation, or critical thinking. They involve interpreting information, making judgments, or providing reasoned arguments.",
+      "Linguistic Analysis": "Analyzing grammatical, syntactic, and stylistic aspects of the text.",
+      "Critical Review and Assessment": "Evaluating content, such as articles, books, or projects, for quality, coherence, and overall effectiveness, often providing constructive feedback.",
+      "Grammatical Error Correction": "The task of detecting and correcting grammatical errors in a text, which includes fixing issues related to verb tense, subject-verb agreement, sentence structure, punctuation, and other aspects of grammar.",
+      "Simplifying Complex Ideas": "The process of breaking down and explaining complex concepts or information in a simpler, more understandable way, making them accessible to a broader audience.",
+      "Mathematical Problem Solving": "The task of solving mathematical problems or equations, ranging from basic arithmetic to more advanced areas like calculus, statistics, or algebra.",
+      "Code Analysis": "Involves examining, interpreting, and debugging existing code, as well as providing insights on code structure, optimization, and best practices in software development.",
+      "Business Analysis and Strategy Development": "The process of evaluating business opportunities, analyzing plans and reports, and generating strategic ideas to support business growth, decision-making, and operational efficiency.",
+      "Healthcare and Medical Analysis": "Examining healthcare practices, medical treatments, or patient data to improve health outcomes and care efficiency.",
+      "Legal Case Analysis": "Examining legal documents, cases, and precedents to interpret laws and provide legal insights or strategies.",
+      "Cybersecurity Threat Assessment": "Evaluating digital systems for potential security threats and vulnerabilities, suggesting measures to enhance security.",
+      "Fiction Analysis": "Critically evaluating a piece of flash fiction, focusing on its narrative structure, character development, and impact."
+    },
+    "Information Processing and Retrieval": {
+      "descr": "This category includes classical NLP tasks that involve the handling, interpretation, and retrieval of information. It encompasses activities where the primary goal is to manage and utilize existing knowledge or data.",
+      "Factual Question Answering": "Responding to queries with accurate, specific information based on available data or known facts.",
+      "Text Summarization": "Condensing lengthy texts into concise summaries, capturing the essential points.",
+      "Information Extraction": "Identifying and extracting key pieces of information from a larger dataset or complex texts.",
+      "Translation": "Converting text or speech from one language to another while maintaining the original meaning and context.",
+      "Document Classification": "Categorizing documents into predefined classes based on their content, such as spam detection in emails.",
+      "Keyword Extraction": "Identifying and extracting the most relevant or significant words or phrases from a text.",
+      "Named Entity Recognition": "Identifying and classifying key entities in the text, such as names of people, places, organizations, dates, and other specifics.",
+      "Sentiment Analysis": "Determining the emotional tone of the text, categorizing it as positive, negative, or neutral.",
+      "Theme Identification": "Determining central themes or topics discussed in the text.",
+      "Part-of-Speech Tagging": "The process of identifying and labeling each word in a text with its corresponding part of speech, such as noun, verb, adjective, etc., based on both its definition and context within the sentence."
+    }
+  },
+  "output": {
+    "descr": "These are three most general types of tasks",
+    "Creative and Generative Tasks": {
+      "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+      "Artistic Concept Generation": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": [
+          {
+            "name": "Historical Theme Exploration",
+            "description": "This subtask requires researching and drawing inspiration from a specific historical period or event to inform the artistic concept. It involves an in-depth study of the chosen time period's aesthetics, values, and motifs. The outcome is to enrich the artistic concept with historical context and depth.",
+            "system_prompt": "Generate an artistic concept using the historical context provided in the following text, focusing on its aesthetics and values."
+          },
+          {
+            "name": "Color Palette Development",
+            "description": "For this subtask, the focus is on creating a harmonious color palette that fits the artistic concept's intended emotion or theme. It entails selecting colors and their relationships to evoke a desired response. The resulting color palette is intended to consistently guide the visual elements of the artwork.",
+            "system_prompt": "Create a harmonious color palette based on the emotional theme described in the text that follows."
+          },
+          {
+            "name": "Genre Fusion",
+            "description": "The task here is to blend elements from multiple artistic genres to create a unique and innovative concept. It requires identifying core attributes from each genre and combining them thoughtfully. The objective is to produce a concept that offers a fresh perspective while still acknowledging its roots.",
+            "system_prompt": "Fuse diverse artistic genres as specified in the following text to create an innovative concept."
+          },
+          {
+            "name": "Cultural Inspiration",
+            "description": "This subtask focuses on infusing the artistic concept with elements derived from specific cultures or traditions. It involves researching cultural artifacts, practices, and beliefs to authentically represent them within the concept. The aim is to celebrate and respect cultural diversity in the artistic creation.",
+            "system_prompt": "Incorporate the cultural elements detailed in the next text into an artistic concept, honoring their origins."
+          },
+          {
+            "name": "Music Genre Adaptation",
+            "description": "In this subtask, the goal is to adapt or incorporate elements of a particular music genre into the artistic concept. It requires an understanding of the genre's characteristics and its emotional impact. The resultant adaptation should enhance the artistic concept's auditory experience.",
+            "system_prompt": "Adapt elements from the specified music genre in the subsequent text to enrich the artistic concept."
+          },
+          {
+            "name": "Sensory Experience Design",
+            "description": "This subtask is about designing the concept to provide a multi-sensory experience. It involves considering not just visual elements but also textures, sounds, and possibly smells that contribute to the concept. The objective is to create a more immersive and engaging artistic experience.",
+            "system_prompt": "Design a multi-sensory experience using the guidelines in the following input to enhance the artistic concept."
+          },
+          {
+            "name": "Dialogue and Feedback Iteration",
+            "description": "The subtask here is to engage in dialogue with peers or the target audience to gain feedback on the artistic concept. It requires presenting preliminary ideas, actively listening to responses, and iterating on the concept. The goal is to refine and develop the concept collaboratively, ensuring it resonates with others.",
+            "system_prompt": "Engage with the following feedback to iteratively refine the artistic concept presented."
+          },
+          {
+            "name": "Visual Theme Inspiration",
+            "description": "This subtask aims to provide inspiration for visual themes related to the artistic concept. It involves analyzing the primary task input for aesthetically compelling elements, which can be translated into visual art. The objective is to generate ideas that can guide artists in their creation of visual pieces.",
+            "system_prompt": "Extract visual theme inspiration from the text that follows to guide the creation of visual art."
+          },
+          {
+            "name": "Musical Motif Development",
+            "description": "The subtask involves developing motifs or sequences that could form the basis of a musical composition. It requires abstracting emotions, narratives or images from the text and translating them into musical ideas. The goal is to inspire composers to create music that resonates with the original artistic concept.",
+            "system_prompt": "Develop musical motifs from the narrative elements in the subsequent text to inform a composition."
+          },
+          {
+            "name": "Choreography Inspiration",
+            "description": "Choreography inspiration involves generating dance movement ideas that encapsulate the artistic concept. It includes deriving the rhythm, style, and expression that could translate the concept into dance form. Choreographers can use this as a foundation for their performance pieces.",
+            "system_prompt": "Generate choreography ideas from the artistic concept described next, focusing on rhythm and style."
+          }
+        ]
+      },
+      "Code Writing": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": {
+          "descr": "The task of creating software code, involving writing scripts or programs in various programming languages, focusing on aspects like functionality, efficiency, and readability.",
+          "subtasks": [
+            {
+              "name": "Function Implementation",
+              "description": "This subtask involves writing a specific function to perform a defined operation or to solve a particular problem stated in the text. It requires understanding the requirements, designing the logic, and coding the function. The aim is to deliver a self-contained piece of code that can be integrated into a larger system.",
+              "system_prompt": "Implement the function specified in the following text with attention to its operation and integration into larger systems."
+            },
+            {
+              "name": "Code Optimization",
+              "description": "The focus of this subtask is to refine existing code to improve efficiency and performance. It involves analyzing the code for bottlenecks, implementing better algorithms, and reducing complexity. The goal is to enhance the speed and resource management of the code without altering its functionality.",
+              "system_prompt": "Optimize the provided code in the following text to enhance efficiency and performance without changing its functionality."
+            },
+            {
+              "name": "Error Debugging",
+              "description": "Error debugging is about identifying and fixing bugs or errors in the given code. This subtask requires a thorough examination of the code to pinpoint inaccuracies and apply corrective measures. The objective is to ensure the program runs smoothly and correctly.",
+              "system_prompt": "Debug the code in the text that follows, fixing errors to ensure smooth and correct operation."
+            },
+            {
+              "name": "Code Documentation",
+              "description": "This subtask consists of creating comprehensive documentation for the given code. It includes writing comments, explanations, and usage guidelines to help future developers understand and maintain the code. The purpose is to provide clarity and facilitate collaboration.",
+              "system_prompt": "Create comprehensive documentation for the code in the following text to aid understanding and collaboration."
+            },
+            {
+              "name": "Unit Testing",
+              "description": "Unit testing is the process of writing tests for individual units or components of the code to verify that each part functions correctly. This subtask is crucial for validating code behavior and preventing future regressions. The goal is to create a suite of tests that cover various use cases and edge cases.",
+              "system_prompt": "Write unit tests for the code components that follow, ensuring each part functions as expected."
+            },
+            {
+              "name": "Feature Extension",
+              "description": "This subtask involves extending the code to include additional features or capabilities as described in the text. It requires building upon the existing codebase to implement new functions and integrate them seamlessly. The objective is to enhance the software while preserving existing functionality.",
+              "system_prompt": "Extend the following code to implement the described additional features, maintaining existing functionality."
+            },
+            {
+              "name": "Code Refactoring",
+              "description": "Code refactoring is the process of restructuring existing code without changing its external behavior. The subtask aims to clean up the codebase, improving readability and maintainability. This is a proactive step to keep the codebase healthy and scalable.",
+              "system_prompt": "Refactor the provided code from the subsequent text to improve its structure without altering its behavior."
+            },
+            {
+              "name": "Code Translation",
+              "description": "This subtask involves translating the code from one programming language to another. It requires a deep understanding of both source and target languages as well as their respective idioms and patterns. The objective is to recreate the software's functionality in a different coding language.",
+              "system_prompt": "Translate the following code into the target language, preserving the functionality and adapting to language idioms."
+            },
+            {
+              "name": "Dependency Management",
+              "description": "Dependency management is the subtask of handling the software's external libraries and modules that it relies on. It entails keeping track of versions, updating libraries, and ensuring compatibility. The goal is to maintain a stable and up-to-date codebase while minimizing dependency-related issues.",
+              "system_prompt": "Manage the dependencies in the upcoming text, ensuring compatibility and an up-to-date codebase."
+            },
+            {
+              "name": "User Interface Development",
+              "description": "This subtask involves creating and implementing the graphical elements that users interact with in software. It requires designing the layout, defining user interactions, and ensuring the interface is intuitive and accessible. The outcome should be a user-friendly and aesthetically pleasing interface that complements the underlying code.",
+              "system_prompt": "Develop a user-friendly and accessible interface for the software described in the text that follows."
+            }
+          ]
+        }
+      },
+      "Creative Writing and Composition": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": {
+          "descr": "The process of generating original artistic content, such as poems, stories, or narratives, emphasizing creativity, narrative structure, and expressive use of language.",
+          "subtasks": [
+            {
+              "name": "Character Development",
+              "description": "This subtask aims to elaborate and enhance individual character profiles within a text. It involves crafting detailed backstories, personalities, and motivations to create more nuanced and compelling characters. The objective is to deepen readers' understanding and connection to the characters in the creative work.",
+              "system_prompt": "Generate detailed character profiles for the following text, focusing on creating nuanced backstories and motivations."
+            },
+            {
+              "name": "Setting Expansion",
+              "description": "The focus here is to enrich the setting where the narrative unfolds. It requires detailing the environment, historical period, or cultural context to better immerse the reader. The goal is to provide a vivid and well-established backdrop for the story.",
+              "system_prompt": "Expand on the setting described in the input text, giving elaborate environmental and historical context."
+            },
+            {
+              "name": "Plot Structuring",
+              "description": "This subtask deals with organizing the series of events that make up the narrative. It involves outlining a clear beginning, development, climax, and resolution to ensure a coherent and engaging storyline. The purpose is to create a satisfying narrative arc that captivates the audience.",
+              "system_prompt": "Outline a narrative arc for the input text, including a beginning, climax, and resolution."
+            },
+            {
+              "name": "Dialogue Refinement",
+              "description": "Enhancing the quality of conversations between characters is the main goal of this subtask. It includes making dialogue more realistic, expressive, and tailored to each character\u2019s voice. The aim is to make interactions more dynamic and contribute to character and plot development.",
+              "system_prompt": "Refine the dialogues in the input text to make them more realistic and expressive for each character."
+            },
+            {
+              "name": "Theme Exploration",
+              "description": "This subtask is dedicated to identifying and exploring the overarching themes of the creative text. It demands a thoughtful investigation of the main ideas and messages the author wishes to convey. The intention is to make these themes more pronounced and meaningful within the narrative.",
+              "system_prompt": "Identify and explore the themes in the following text, emphasizing the main ideas and messages."
+            },
+            {
+              "name": "Conflict Creation",
+              "description": "In this subtask, the focus is on developing and introducing conflicts to drive the narrative forward. This includes internal character conflicts or external conflicts with other characters or the environment. The objective is to build tension and interest, which is crucial for an engaging story.",
+              "system_prompt": "Introduce and develop conflicts in the input text to build tension and drive the narrative."
+            },
+            {
+              "name": "Emotional Layering",
+              "description": "This subtask works on adding depth to the emotional experiences conveyed in the text. It requires careful crafting of scenes and dialogue to evoke a range of emotions. The objective is to connect deeply with the reader and to add richness to the characters\u2019 journeys.",
+              "system_prompt": "Craft scenes and dialogues in the input text to evoke a spectrum of emotions and depth."
+            },
+            {
+              "name": "Motif Reinforcement",
+              "description": "Reinforcement of motifs entails repeatedly weaving a significant element through the narrative for symbolic purpose. This subtask requires identifying and consistently incorporating this element to contribute to the theme or mood. The goal is to create a pattern that adds significance to the narrative.",
+              "system_prompt": "Weave a motif through the following narrative to enhance the theme and add symbolic depth."
+            },
+            {
+              "name": "Backstory Weaving",
+              "description": "This subtask involves creating and integrating characters\u2019 histories into the main narrative. It requires revealing past events that shape characters\u2019 personalities and motives. The aim is to provide context and deepen the reader's understanding of character decisions and actions.",
+              "system_prompt": "Create and integrate backstories for characters in the input text, giving context to their actions and motives."
+            },
+            {
+              "name": "Metaphorical Language Crafting",
+              "description": "This subtask focuses on enhancing the text with metaphoric language. It includes creating analogies, metaphors, and similes that enrich the narrative and elucidate concepts. The intent is to reveal deeper insights through figurative and imaginative language.",
+              "system_prompt": "Employ metaphors, similes, and analogies in the input text to enrich the narrative with deeper insights."
+            }
+          ]
+        }
+      },
+      "Textual Adaptation and Transformation": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": {
+          "descr": "Involves modifying existing texts to create new versions, such as developing alternative endings for stories, converting texts into different genres, or reimagining narratives from new perspectives.",
+          "subtasks": [
+            {
+              "name": "Alternative Endings Creation",
+              "description": "This subtask requires the writer to reimagine the conclusion of a story, creating one or more alternative endings. It involves a creative understanding of the narrative's tone, characters, and plot to ensure coherence with the original storyline. The aim is to provide readers with different possible outcomes that are engaging and thought-provoking.",
+              "system_prompt": "Devise an alternative ending for the following story, ensuring it aligns with the narrative's established elements."
+            },
+            {
+              "name": "Genre Transformation",
+              "description": "The goal of this subtask is to convert the text into a different literary or writing genre. This involves identifying the core elements of both the original and target genres, and effectively adapting the text's style, tone, and content. The result should be a coherent piece that stays true to the essence of the original while fitting into the new genre.",
+              "system_prompt": "Transform the genre of the text below, preserving its essence while adapting its style and content."
+            },
+            {
+              "name": "Narrative Perspective Shift",
+              "description": "This subtask requires rewriting the text from a different narrative point of view. It could involve changing from first-person to third-person perspective, or vice versa, or adopting the viewpoint of a different character. The challenge lies in staying true to the original text's events while altering the lens through which the story is told.",
+              "system_prompt": "Rewrite the following text from a different perspective, maintaining the integrity of the original events."
+            },
+            {
+              "name": "Time Period Conversion",
+              "description": "This subtask involves transporting the narrative to a different time period, while maintaining the original's core themes and story arc. It requires adjusting cultural and historical references, dialogue, and setting details to fit the selected era. The reimagined text should resonate with the ambiance of the new time period, offering a fresh take on the original material.",
+              "system_prompt": "Reimagine the following story in a different time period, adapting references and details accordingly."
+            },
+            {
+              "name": "Cultural Contextualization",
+              "description": "The objective of this subtask is to adapt the text to reflect a different cultural setting. It requires a nuanced understanding of both the source and target cultures, and careful modification of language, customs, and contexts. The aim is to create a version of the text that preserves its original message while making it relatable to a new cultural audience.",
+              "system_prompt": "Adapt the text below to a different cultural context, carefully altering language and customs."
+            },
+            {
+              "name": "Modernization",
+              "description": "The aim here is to update the text with contemporary language, expressions, and contexts. This subtask requires a delicate balance of preserving the original's tone and substance while making it more accessible and engaging for today's audience. The modernized version should feel fresh and relevant while honoring the source material.",
+              "system_prompt": "Update the following text with modern language and contexts while retaining the original tone."
+            },
+            {
+              "name": "Simplification",
+              "description": "This subtask is about rewriting the text in a simpler language for ease of understanding. It is particularly useful for audiences with different levels of language proficiency or for educational purposes. The simplified text should convey the same information and narrative as the original, but in a more accessible manner.",
+              "system_prompt": "Simplify the text that follows, ensuring clarity and ease of understanding while preserving its message."
+            },
+            {
+              "name": "Poetic Translation",
+              "description": "This creative subtask involves transforming prose into poetry, distilling the essence of the text into verse form. It necessitates not only a grasp of poetic techniques but also the ability to capture the original's emotive power and thematic resonance in a more condensed, rhythmic format. The resulting poem should evoke the spirit of the original text through the beauty and brevity of poetry.",
+              "system_prompt": "Translate the prose below into poetry, capturing its essence and themes in verse."
+            },
+            {
+              "name": "Educational Adaption",
+              "description": "This subtask targets the transformation of the text to serve educational purposes, such as creating study guides, lesson plans, or adaptations for young readers. It involves tailoring the content to fit pedagogical objectives, ensuring that the adaptation is both informative and age-appropriate. The end product should facilitate learning while keeping the text engaging.",
+              "system_prompt": "Adapt the following text for educational purposes, making it informative and age-appropriate."
+            },
+            {
+              "name": "Interactive Adaptation",
+              "description": "The subtask of interactive adaptation entails reworking the text into an interactive format, such as a choose-your-own-adventure book or an interactive digital narrative. It requires branching story lines and multiple decision points, providing the audience with agency over the narrative's direction. The interactive version should offer a dynamic and participatory experience while remaining faithful to the original's core story.",
+              "system_prompt": "Convert the text below into an interactive format with choices that influence the story's direction."
+            }
+          ]
+        }
+      },
+      "Assisting with Emails": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": {
+          "descr": "The skill of drafting and structuring emails for business or professional communication, focusing on clarity, tone, and appropriateness to the context and audience.",
+          "subtasks": [
+            {
+              "name": "Email Reply Generation",
+              "description": "This subtask involves generating a relevant and coherent response to an incoming email.",
+              "system_prompt": "Generate a coherent email reply based on the following message, maintaining context and appropriate tone."
+            },
+            {
+              "name": "Action Item Extraction",
+              "description": "This task is about identifying and listing specific tasks or follow-up actions required by the email.",
+              "system_prompt": "Extract actionable items from the following email, focusing on tasks, deadlines, and response requests."
+            },
+            {
+              "name": "Clarification Request",
+              "description": "This subtask is to craft a polite request for clarification when an email is unclear.",
+              "system_prompt": "Compose a polite clarification request for the ambiguous parts of the following email."
+            },
+            {
+              "name": "Greeting and Closing Customization",
+              "description": "Personalizing the opening and closing of an email to match the recipient and context.",
+              "system_prompt": "Customize the greeting and closing of the following email to fit the recipient and context."
+            },
+            {
+              "name": "Tone Analysis",
+              "description": "Analyzing the tone of an email to ensure it matches the intended sentiment.",
+              "system_prompt": "Analyze the tone of the following email and suggest changes to match the required sentiment."
+            },
+            {
+              "name": "Sensitive Content Filter",
+              "description": "Detecting and addressing sensitive or inappropriate content within an email.",
+              "system_prompt": "Filter the following email for sensitive content and suggest necessary changes or removals."
+            },
+            {
+              "name": "Follow-up Reminder",
+              "description": "Creating reminders for future follow-up on important emails.",
+              "system_prompt": "Create a reminder system for follow-up based on the important points of the following email."
+            },
+            {
+              "name": "Email Drafting",
+              "description": "Composing an entirely new email based on given context, instructions, or topics.",
+              "system_prompt": "Draft a new email using the context and instructions provided in the following text."
+            },
+            {
+              "name": "Email Editing",
+              "description": "Refining an existing email draft by enhancing its clarity, grammar, and style.",
+              "system_prompt": "Edit the following email draft for clarity, grammar, and style to ensure professional communication."
+            },
+            {
+              "name": "Tone Adjustment",
+              "description": "Adjusting the tone of the email to suit the intended audience or purpose.",
+              "system_prompt": "Adjust the tone of the given email to better suit the audience and purpose, as detailed below."
+            }
+          ]
+        }
+      },
+      "Culinary Assistance and Guidance": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": {
+          "descr": "Providing support and advice in cooking processes, including recipe selection, ingredient substitution, cooking techniques, and presentation tips.",
+          "subtasks": [
+            {
+              "name": "Recipe Recommendation",
+              "description": "This subtask involves suggesting recipes based on specific criteria such as available ingredients, dietary restrictions, or desired cuisine.",
+              "system_prompt": "Suggest recipes tailored to the following criteria: ingredients, dietary restrictions, and cuisine preferences."
+            },
+            {
+              "name": "Ingredient Substitution",
+              "description": "This subtask provides alternatives for ingredients that a user might need to replace.",
+              "system_prompt": "Offer ingredient substitutions for the upcoming list while maintaining the dish's original flavor and structure."
+            },
+            {
+              "name": "Cooking Technique Explanation",
+              "description": "This subtask is focused on clarifying cooking techniques in simple steps.",
+              "system_prompt": "Explain the cooking technique presented next, breaking it down into clear, manageable steps."
+            },
+            {
+              "name": "Nutritional Information Analysis",
+              "description": "This subtask requires analyzing nutritional content of recipes or ingredients.",
+              "system_prompt": "Analyze and summarize the nutritional information for the specified recipe or ingredient."
+            },
+            {
+              "name": "Cooking Time Estimation",
+              "description": "This subtask estimates the total time required for a recipe.",
+              "system_prompt": "Estimate the total preparation and cooking time for the upcoming recipe, considering all relevant factors."
+            },
+            {
+              "name": "Meal Planning Assistance",
+              "description": "This subtask involves curating a balanced meal plan for a specified duration.",
+              "system_prompt": "Create a balanced meal plan based on the preferences and duration specified in the next input."
+            },
+            {
+              "name": "Food Safety Guidelines",
+              "description": "This subtask provides information on proper food handling and safety.",
+              "system_prompt": "Provide food safety guidelines regarding handling, storage, and cooking temperatures for the following scenarios."
+            },
+            {
+              "name": "Culinary Terminology Clarification",
+              "description": "This subtask involves explaining culinary terms and jargon.",
+              "system_prompt": "Clarify the culinary terms listed next to assist in understanding cooking instructions and terminology."
+            },
+            {
+              "name": "Utensil and Equipment Recommendation",
+              "description": "This subtask involves suggesting kitchen tools for preparing a recipe.",
+              "system_prompt": "Recommend the appropriate utensils and equipment for the recipe that will be described next."
+            },
+            {
+              "name": "Leftover Transformation",
+              "description": "This subtask offers ideas for repurposing leftovers into new dishes.",
+              "system_prompt": "Propose creative ways to transform the provided leftover ingredients into new, appealing dishes."
+            }
+          ]
+        }
+      },
+      "Humor and Joke Crafting": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": {
+          "descr": "The creative process of developing humorous content, jokes, or witty remarks, tailored to entertain or engage a specific audience.",
+          "subtasks": [
+            {
+              "name": "Pun Creation",
+              "description": "This subtask involves creating puns based on the content provided, using wordplay to elicit humor.",
+              "system_prompt": "Craft a pun from the following input, utilizing wordplay to generate humor based on content context."
+            },
+            {
+              "name": "One-liners Generation",
+              "description": "This subtask focuses on crafting short, snappy jokes or witty remarks that are typically one sentence long.",
+              "system_prompt": "Generate a one-liner joke from the input, distilling humor into a concise and impactful statement."
+            },
+            {
+              "name": "Anecdotal Humor Development",
+              "description": "This subtask requires constructing short and amusing stories inspired by the provided text.",
+              "system_prompt": "Develop an engaging funny anecdote from the text that follows, highlighting relatable humorous scenarios."
+            },
+            {
+              "name": "Topical Jokes Formulation",
+              "description": "This subtask is about generating jokes that relate to current events, trends, or cultural phenomena.",
+              "system_prompt": "Formulate a topical joke from the input that cleverly ties to current events or cultural trends."
+            },
+            {
+              "name": "Satirical Commentary",
+              "description": "This subtask involves using irony, sarcasm, or exaggeration to comment on the text in a satirical manner.",
+              "system_prompt": "Create a satirical commentary based on the input, employing irony or exaggeration for humorous critique."
+            },
+            {
+              "name": "Character-Based Jokes",
+              "description": "This subtask requires inventing jokes that revolve around fictional or exaggerated characters from the text.",
+              "system_prompt": "Invent a character-based joke from the text, highlighting humorous traits or idiosyncrasies."
+            },
+            {
+              "name": "Word Association Games",
+              "description": "This subtask is about crafting jokes or humorous phrases by associating words from the text with other ideas.",
+              "system_prompt": "Construct a humorous phrase through word association from the input, linking incongruous ideas for laughs."
+            },
+            {
+              "name": "Irony Crafting",
+              "description": "This subtask focuses on creating expressions of irony, where the intended meaning is the opposite of the literal meaning.",
+              "system_prompt": "Craft an ironic statement from the following text, where the literary meaning opposes the intended humor."
+            },
+            {
+              "name": "Situational Comedy Setup",
+              "description": "This subtask is about constructing humorous situations or scenes inspired by the text.",
+              "system_prompt": "Setup a situational comedy from the input provided, where the humor emerges from the scenario's development."
+            },
+            {
+              "name": "Absurdist Humor Generation",
+              "description": "This subtask involves crafting jokes or scenarios based on absurdity, illogic, or nonsense.",
+              "system_prompt": "Generate absurdist humor from the text, embracing illogic and the nonsensical to amuse the audience."
+            }
+          ]
+        }
+      },
+      "Personalized Recommendation Generation": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": {
+          "descr": "Generating tailored suggestions or recommendations based on user preferences or requirements, applicable in areas like books, movies, products, or travel destinations.",
+          "subtasks": [
+            {
+              "name": "Contextual Movie Recommendation",
+              "description": "This task involves providing movie suggestions based on the user's current mood, recent movie watching history, or preferred genres.",
+              "system_prompt": "Generate a movie recommendation based on the subsequent mood, history, and genre preferences described."
+            },
+            {
+              "name": "Music Recommendation for Activities",
+              "description": "The task is to recommend music playlists or songs suitable for specific activities or times of day.",
+              "system_prompt": "Craft a music playlist recommendation appropriate for the detailed activity and time of day provided."
+            },
+            {
+              "name": "Book Recommendation for Genre Enthusiasts",
+              "description": "This involves suggesting books based on the user's favorite genres or authors.",
+              "system_prompt": "Suggest books for the user by considering the following favorite genres and author preferences."
+            },
+            {
+              "name": "Travel Destination Suggestion",
+              "description": "Offering travel destination recommendations based on the user's preferences and experiences.",
+              "system_prompt": "Propose travel destinations taking into account the subsequent travel history and user preferences."
+            },
+            {
+              "name": "Personalized Product Recommendations",
+              "description": "Providing product suggestions tailored to the user's history and specific needs.",
+              "system_prompt": "Give product suggestions that align with the outlined purchase history, brand preferences, and needs."
+            },
+            {
+              "name": "Cuisine and Restaurant Suggestions",
+              "description": "Recommending cuisines or restaurants based on the user's dietary preferences and experiences.",
+              "system_prompt": "Recommend cuisines or restaurants matching the dietary preferences and experiences described next."
+            },
+            {
+              "name": "Fitness Routine Music Recommendation",
+              "description": "Suggesting music that complements the user's fitness routine.",
+              "system_prompt": "Offer music selections that enhance the upcoming workout details, factoring in type and intensity."
+            },
+            {
+              "name": "Podcast Recommendation for Commutes",
+              "description": "Recommending podcasts for the user's daily commute.",
+              "system_prompt": "Advise on podcasts suited for the user\u2019s commute, taking into account the mentioned interests and commute duration."
+            },
+            {
+              "name": "Event and Activity Recommendations",
+              "description": "Suggesting events and activities such as concerts, exhibitions, or workshops.",
+              "system_prompt": "Devise event and activity recommendations tailored to the user\u2019s interests, location, and availability provided."
+            },
+            {
+              "name": "Educational Content Suggestions",
+              "description": "Providing recommendations for educational content like online courses or webinars.",
+              "system_prompt": "Propose educational content options tailored to the specified learning goals, interests, and style."
+            }
+          ]
+        }
+      },
+      "Hobby Development Assistance": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": {
+          "descr": "Providing guidance and support for exploring and developing new hobbies, including advice on selecting hobbies, creating learning plans, and offering tips for skill advancement.",
+          "subtasks": [
+            {
+              "name": "Hobby Selection Guidance",
+              "description": "This subtask involves assisting users in identifying hobbies that align with their interests and lifestyles.",
+              "system_prompt": "Analyze the text that follows to suggest hobbies tailored to the user's interests and lifestyle."
+            },
+            {
+              "name": "Skill Progression Planning",
+              "description": "This subtask aims to create a step-by-step plan detailing the progression of skills needed to master the hobby.",
+              "system_prompt": "Create a skill progression plan based on the input, including goals, milestones, and timelines."
+            },
+            {
+              "name": "Budget Management Advice",
+              "description": "This task assists the user in planning a budget for their hobby.",
+              "system_prompt": "Provide a budget plan for the following hobby, considering initial and ongoing costs."
+            },
+            {
+              "name": "Time Allocation Strategies",
+              "description": "The subtask helps users strategize how to incorporate their new hobby into their daily routine.",
+              "system_prompt": "Develop a time management strategy for the hobby described in the following text."
+            },
+            {
+              "name": "Skill Assessment Tools",
+              "description": "This subtask revolves around identifying or creating tools for the user to assess their current skill level.",
+              "system_prompt": "Propose skill assessment tools for the hobby mentioned next, to track the user's progression."
+            },
+            {
+              "name": "Community Engagement Tactics",
+              "description": "It focuses on methods for connecting the user with communities related to their hobby.",
+              "system_prompt": "Recommend community engagement methods for the hobby coming up, to foster skill practice."
+            },
+            {
+              "name": "Equipment and Material Sourcing",
+              "description": "This subtask involves identifying and recommending the necessary equipment and materials for the hobby.",
+              "system_prompt": "List required equipment and materials for the upcoming hobby and suggest sourcing options."
+            },
+            {
+              "name": "Safety Guidelines",
+              "description": "The subtask is to inform the user about safety precautions related to their hobby.",
+              "system_prompt": "Outline safety precautions and best practices for the hobby detailed in the next passage."
+            },
+            {
+              "name": "Performance Improvement Strategies",
+              "description": "The subtask is dedicated to providing strategies for the user to improve their performance within the hobby.",
+              "system_prompt": "Offer performance improvement strategies for the described hobby to enhance the user's skill."
+            },
+            {
+              "name": "Hobby-Related Event Information",
+              "description": "This subtask provides information about upcoming events related to the user's hobby.",
+              "system_prompt": "Identify and detail upcoming events related to the hobby mentioned in the following text."
+            }
+          ]
+        }
+      },
+      "Prompt Development and Customization": {
+        "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+        "subtasks": {
+          "descr": "The process of creating and refining prompts for various applications, encompassing the generation of original prompts and the modification of existing ones to suit specific needs or contexts.",
+          "subtasks": [
+            {
+              "name": "Targeted Prompt Refinement",
+              "description": "This subtask involves modifying existing prompts to target specific user groups or individuals.",
+              "system_prompt": "Refine the following prompt to appeal specifically to the designated user group, considering their unique characteristics."
+            },
+            {
+              "name": "Prompt Expansion",
+              "description": "The task of expanding a basic prompt into a more detailed or complex one.",
+              "system_prompt": "Expand the basic prompt below into a more comprehensive version that invites a detailed, nuanced response."
+            },
+            {
+              "name": "Prompt Simplification",
+              "description": "Here, the objective is to simplify complex prompts into easier-to-understand versions.",
+              "system_prompt": "Simplify the complex prompt that follows into a more graspable form without losing its original intent."
+            },
+            {
+              "name": "Multi-Lingual Prompt Adaptation",
+              "description": "This subtask entails translating and adjusting prompts for multi-lingual applications.",
+              "system_prompt": "Translate and culturally adapt the given prompt for a multi-lingual audience, ensuring clarity and relevance."
+            },
+            {
+              "name": "Prompt Variability Generation",
+              "description": "The creation of multiple variations of a prompt to test which elicits the best response.",
+              "system_prompt": "Generate several distinct variations of the following prompt, keeping the original purpose intact."
+            },
+            {
+              "name": "Factual Prompt Compilation",
+              "description": "This subtask entails assembling prompts based on factual information or data.",
+              "system_prompt": "Compile a prompt that incorporates the factual data given below, ensuring accuracy and reliability."
+            },
+            {
+              "name": "Ethical Prompt Evaluation",
+              "description": "The aim is to scrutinize prompts to ensure they adhere to ethical standards.",
+              "system_prompt": "Evaluate the ethical implications of the following prompt, making sure it upholds integrity and fairness."
+            },
+            {
+              "name": "Scenario-Based Prompt Construction",
+              "description": "This task involves creating prompts based on hypothetical or real-world scenarios.",
+              "system_prompt": "Construct a prompt based on the scenario below that could be effectively used in role-play or strategic planning."
+            },
+            {
+              "name": "Specificity Enhancement",
+              "description": "This subtask involves revising prompts to include more specific details or constraints.",
+              "system_prompt": "Enhance the following prompt by adding specific details that tailor it to the desired, precise output."
+            },
+            {
+              "name": "Contextual Customization",
+              "description": "The aim of this subtask is to adapt the prompt to fit a particular context or scenario.",
+              "system_prompt": "Customize the prompt provided to suit the given context, ensuring it elicits contextually relevant responses."
+            }
+          ]
+        }
+      }
+    }
+  }
+}
