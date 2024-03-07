@@ -10,7 +10,8 @@ from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
 from huggingface_hub import login
 
 import openai
-sys.path.append("..")
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from openai_utils import completions_with_backoff
 
 from typing import Union, List, Dict, Tuple, Optional
@@ -20,7 +21,6 @@ class ModelAPIHandler:
     def __init__(self, model_name: str, model_type: str) -> None:
         """
         Initializes the model handler based on the model name. Loads the model for hugging face models.
-
 
         Parameters:
         - model_name (str): The name of the model to be used.
@@ -56,7 +56,7 @@ class ModelAPIHandler:
             response = completions_with_backoff(
                 model=self.model_name,
                 messages=model_input,  # Adapted for OpenAI
-                max_tokens=4096
+                max_tokens=3072
             )
             return response['choices'][0]['message']['content']
         else:
@@ -100,6 +100,7 @@ class ModelAPIHandler:
                     {"role": "user", "content": user_instruction}]
             return self.tokenizer.apply_chat_template(chat, tokenize=False, add_generation_prompt=True)
 
+
 def load_config(config_path: str = './model_eval/config.json') -> Dict:
     """
     Loads configuration settings from a JSON file.
@@ -114,32 +115,27 @@ def load_config(config_path: str = './model_eval/config.json') -> Dict:
         return json.load(file)
 
 
-def load_data(data_path: str, templates_path: str, prompt_index: int) -> Tuple[List[Dict], Dict]:
+def load_data(data_path: str) -> List[Dict]:
     """
     Loads the dataset and prompt templates from specified paths.
 
     Parameters:
     - data_path (str): The path to the dataset JSON file.
-    - templates_path (str): The path to the prompt templates JSON file.
-    - prompt_index (int): The index of the prompt template to use.
 
     Returns:
-    - Tuple[List[Dict], Dict]: The loaded dataset and the selected prompt template.
+    - List[Dict]: The loaded dataset.
     """
     with open(data_path, 'r') as f:
         dataset = json.load(f)
-    with open(templates_path, "r") as f:
-        prompt_template = json.load(f)[prompt_index]
-    return dataset, prompt_template
+    return dataset
 
 
-def format_prompt(elem: Dict, template: Dict, mode: str = 'data_with_probe') -> Tuple[str, str]:
+def format_prompt(elem: Dict, mode: str = 'data_with_probe') -> Tuple[str, str]:
     """
     Formats the prompt based on the provided data point and the mode.
 
     Parameters:
     - elem (Dict): The data point containing information for prompt formatting.
-    - template (Dict): The template to use for prompt formatting.
     - mode (str): The mode of prompt formatting. 'data_with_probe' for probe with data,
                   'probe_with_task' for probe with task prompt.
 
@@ -150,18 +146,18 @@ def format_prompt(elem: Dict, template: Dict, mode: str = 'data_with_probe') -> 
     - ValueError: If an invalid mode is provided.
     """
     if mode == 'data_with_probe':
-        system_instruction = template["system"].format(elem["task_prompt"])
-        user_instruction = template["main"].format(elem["data_prompt"] + elem["probe"])
+        system_instruction = elem["system_prompt_clean"]
+        user_instruction = elem["prompt_instructed"]
     elif mode == 'probe_with_task':
-        system_instruction = template["system"].format(elem["probe"] + elem["task_prompt"])
-        user_instruction = template["main"].format(elem["data_prompt"])
+        system_instruction = elem["system_prompt_instructed"]
+        user_instruction = elem["prompt_clean"]
     else:
         raise ValueError(
             f"Invalid mode for prompt formatting: {mode}. Valid modes are 'data_with_probe' or 'probe_with_task'.")
     return system_instruction, user_instruction
 
 
-def inference(dataset: List[Dict], output_path: str, template_info: Dict, handler: ModelAPIHandler,
+def inference(dataset: List[Dict], output_path: str, handler: ModelAPIHandler,
               save_step: str = 20) -> None:
     """
     Runs the inference process on the dataset, generating responses based on two sets of prompts for each data point.
@@ -170,20 +166,18 @@ def inference(dataset: List[Dict], output_path: str, template_info: Dict, handle
     Parameters:
         dataset (List[Dict]): The dataset to process.
         output_path (str): The path where the inference results will be saved.
-        template_info (Dict): Information about the used template.
         handler (ModelAPIHandler): The API handler object for making model calls.
         save_step (str): saves inference result every save_step steps.
     """
     output = []
     for i, data_point in enumerate(tqdm(dataset, desc=f"Processing dataset")):
         # First prompt with probe in data
-        sys_instr_1, user_instr_1 = format_prompt(data_point, template_info["template_prompt"], mode='data_with_probe')
+        sys_instr_1, user_instr_1 = format_prompt(data_point, mode='data_with_probe')
         # Second prompt with probe in task
-        sys_instr_2, user_instr_2 = format_prompt(data_point, template_info["template_prompt"], mode='probe_with_task')
+        sys_instr_2, user_instr_2 = format_prompt(data_point, mode='probe_with_task')
 
         response1 = handler.call_model_api(sys_instr_1, user_instr_1)
         response2 = handler.call_model_api(sys_instr_2, user_instr_2)
-        data_point.update(template_info)
         output.append({
             "output1_probe_in_data": response1,
             "output2_probe_in_task": response2,
@@ -201,43 +195,39 @@ def inference(dataset: List[Dict], output_path: str, template_info: Dict, handle
                 json.dump(output, f)
 
 
-def main(model_ix: int, prompt_ix: int, start_ix: Optional[int] = None, end_ix: Optional[int] = None) -> None:
+def main(model_ix: int,  start_ix: Optional[int] = None, end_ix: Optional[int] = None) -> None:
     """
     Executes the model inference process based on specified command line arguments.
 
     Parameters:
         model_ix (int): Index to select the model configuration.
-        prompt_ix (int): Index to select the prompt template.
         start_ix (Optional[int]): Start index for slicing the dataset, or None to start from the beginning.
         end_ix (Optional[int]): End index for slicing the dataset, or None to go till the end of the dataset.
     """
     config = load_config()
     model_type = config["model_types"][model_ix]
     model_name = config["models"][model_ix]
-    dataset, prompt_template = load_data(config["input_path"], config["prompt_templates_path"], prompt_ix)
+    dataset = load_data(config["input_path"])
 
     if start_ix is None:
         start_ix = 0
     if end_ix is None:
         end_ix = len(dataset)
-    output_dir_path = os.path.join(config["output_base_path"], model_type, f"prompt_{prompt_ix}")
+    output_dir_path = os.path.join(config["output_base_path"], model_type)
     os.makedirs(output_dir_path, exist_ok=True)
     output_file_path = os.path.join(output_dir_path, f"{start_ix}-{end_ix}.json")
     dataset = dataset[start_ix: end_ix]
-    template_info = {"template_prompt_ix": prompt_ix, "template_prompt": prompt_template}
     handler = ModelAPIHandler(model_name, model_type)
-    print(f"Starting inference for model {model_name} on prompt index {prompt_ix}. \
-          Dataset slice is dataset[{start_ix}:{end_ix}]")
-    inference(dataset, output_file_path, template_info, handler)
+    print(f"Starting inference for model {model_name}. Dataset slice is dataset[{start_ix}:{end_ix}]")
+    inference(dataset, output_file_path, handler)
 
     print(f"Inference complete. Results saved to {output_file_path}")
 
 
 if __name__ == "__main__":
-    if len(sys.argv) not in (3, 5):
+    if len(sys.argv) not in (2, 3, 4):
         print(
-            "Usage: get_model_outputs.py <model_ix> <prompt_ix> <start_ix> <end_ix> or\
-             get_model_outputs.py <model_ix> <prompt_ix>")
+            "Usage: get_model_outputs.py <model_ix> (optional) <start_ix> (optional) <end_ix>")
         sys.exit(1)
 
     main(*map(int, sys.argv[1:]))

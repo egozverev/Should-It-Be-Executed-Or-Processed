@@ -9,7 +9,7 @@
     "cognitivecomputations/dolphin-2.2.1-mistral-7b",
     "HuggingFaceH4/zephyr-7b-beta",
     "NousResearch/Llama-2-13b-chat-hf",
-    "gpt-3.5-turbo-0125",
+    "gpt-3.5-turbo-0613",
     "gpt-4-0125-preview"
   ],
   "model_types": [
