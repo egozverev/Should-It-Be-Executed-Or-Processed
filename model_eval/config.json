@@ -1,6 +1,6 @@
 {
-  "input_path": "./model_eval/data_sources/base_data_val.json",
-  "prompt_templates_path": "./model_eval/prompt_templates.json",
+  "input_path": "./model_eval/data_sources/SEP_dataset.json",
+  "prompt_templates_path": "./model_eval/data_sources/prompt_templates.json",
   "output_base_path": "./model_eval/model_outputs/",
   "models": [
     "Open-Orca/Mistral-7B-OpenOrca",

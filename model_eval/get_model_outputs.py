@@ -222,8 +222,7 @@ def main(model_ix: int, prompt_ix: int, start_ix: Optional[int] = None, end_ix: 
         end_ix = len(dataset)
     output_dir_path = os.path.join(config["output_base_path"], model_type, f"prompt_{prompt_ix}")
     os.makedirs(output_dir_path, exist_ok=True)
-    # TODO: delete v3-file
-    output_file_path = os.path.join(output_dir_path, f"{start_ix}-{end_ix}-v3-file.json")
+    output_file_path = os.path.join(output_dir_path, f"{start_ix}-{end_ix}.json")
     dataset = dataset[start_ix: end_ix]
     template_info = {"template_prompt_ix": prompt_ix, "template_prompt": prompt_template}
     handler = ModelAPIHandler(model_name, model_type)
