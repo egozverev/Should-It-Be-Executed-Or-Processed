@@ -5,9 +5,9 @@ import time
 import random
 from tqdm import tqdm
 
-import torch
-from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
-from huggingface_hub import login
+# import torch
+# from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
+# from huggingface_hub import login
 
 import openai
 
@@ -190,7 +190,7 @@ def inference(dataset: List[Dict], output_path: str, handler: ModelAPIHandler,
             },
             "data": data_point
         })
-        if i % save_step == 0:
+        if i % save_step == 0 or i == len(dataset) - 1:
             with open(output_path, "w") as f:
                 json.dump(output, f)
 
