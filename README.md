@@ -1,5 +1,5 @@
 # Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?
-Accompanying code and SEP dataset for the "Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?" paper. 
+Accompanying code and dataset for the "Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?" paper. 
 
 We studied, formalized, and measured an important aspect of
 large language models (LLMs): their (in)ability to separate instruction from data in their inputs. 
