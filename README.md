@@ -23,6 +23,7 @@ This repository contains:
    - A data prompt as task input.
    - A probe embedded in the data or instruction.
    - A witness to verify probe execution.
+
  Here's an illustrative example:
 
 ```json
@@ -35,3 +36,20 @@ This repository contains:
 ```
 2) Data Generation Code: used for creating a dataset like SEP starting from a minimal set of manually written tasks (in our case, 30 general tasks and 100 probes).
 3) Model Evaluation Code: used for evaluating models on the SEP dataset and computing their separation score (difference between model's behaviour when probe is in instruction vs data prompt, see the paper).
+
+## Prerequisites
+
+Create a virtual environment and run: 
+
+```
+pip install -r requirements. txt
+```
+
+## Usage
+
+There are two main components of this repository: dataset generation and model evaluation.
+
+### Generating the Dataset
+TBD
+### Evaluating Models
+TBD

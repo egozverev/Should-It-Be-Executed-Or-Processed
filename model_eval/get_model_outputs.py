@@ -5,9 +5,9 @@ import time
 import random
 from tqdm import tqdm
 
-# import torch
-# from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
-# from huggingface_hub import login
+import torch
+from transformers import AutoTokenizer, pipeline, AutoModelForCausalLM
+from huggingface_hub import login
 
 import openai
 
