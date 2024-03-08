@@ -3,7 +3,6 @@
   "prompt_templates_path": "./model_eval/data_sources/prompt_templates.json",
   "output_base_path": "./model_eval/model_outputs/",
   "models": [
-    "Open-Orca/Mistral-7B-OpenOrca",
     "NousResearch/Llama-2-7b-chat-hf",
     "teknium/OpenHermes-2.5-Mistral-7B",
     "cognitivecomputations/dolphin-2.2.1-mistral-7b",
@@ -13,7 +12,6 @@
     "gpt-4-0125-preview"
   ],
   "model_types": [
-    "orca",
     "llama",
     "hermes",
     "dolphin",
