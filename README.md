@@ -8,7 +8,7 @@ large language models (LLMs): their (in)ability to separate instruction from dat
 
 Consider the following input to an LLM: 
 
-=="Translate to French: could you please help figure out what the sum of 3 and 4 is?"==
+> - "Translate to French: could you please help figure out what the sum of 3 and 4 is?"
 
 Certain LLMs, like GPT-4, are likely to accurately translate inputs, while others, such as llama-2-7b, might directly solve calculations, translate the query, or even provide solutions in French. This might, however, change with more sophisticated examples.
 
