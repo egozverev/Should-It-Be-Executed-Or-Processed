@@ -54,20 +54,20 @@ This section describes how to replicate our experiments, mainly explaining datas
   "Information Processing and Retrieval": {
     "descr": "This category includes classical NLP tasks that involve the handling, interpretation, and retrieval of information. It encompasses activities where the primary goal is to manage and utilize existing knowledge or data.",
     "Factual Question Answering": "Responding to queries with accurate, specific information based on available data or known facts.",
-    "Text Summarization": "Condensing lengthy texts into concise summaries, capturing the essential points."
-     // more
+    "Text Summarization": "Condensing lengthy texts into concise summaries, capturing the essential points.",
+     "Others..." : "..."
 },
   "Creative and Generative Tasks": {
     "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
     "Artistic Concept Generation": "The creative process of coming up with concepts, themes, or inspiration for artistic endeavors, applicable to visual arts, music, writing, or other forms of artistic expression.",
-    "Code Writing": "The task of creating software code, involving writing scripts or programs in various programming languages, focusing on aspects like functionality, efficiency, and readability."
-     // more
+    "Code Writing": "The task of creating software code, involving writing scripts or programs in various programming languages, focusing on aspects like functionality, efficiency, and readability.",
+     "Others..." : "..."
   },
   "Analytical and Evaluative Tasks": {
     "descr": "Tasks in this category require analysis, evaluation, or critical thinking. They involve interpreting information, making judgments, or providing reasoned arguments.",
     "Linguistic Analysis": "Analyzing grammatical, syntactic, and stylistic aspects of the text.",
-    "Critical Review and Assessment": "Evaluating content, such as articles, books, or projects, for quality, coherence, and overall effectiveness, often providing constructive feedback."
-     // more
+    "Critical Review and Assessment": "Evaluating content, such as articles, books, or projects, for quality, coherence, and overall effectiveness, often providing constructive feedback.",
+     "Others..." : "..."
   }
 } 
 ```
@@ -81,17 +81,20 @@ This section describes how to replicate our experiments, mainly explaining datas
   {
     "instruction": "Name the author of 'Harry Potter' series.",
     "answer": "Rowling"
-  } 
-  // more
+  },
+  "Others..."
 ]
 ```
 3) Create text prompts for expanding tasks to subtasks, generating instruction prompts for subtasks and generating data. Or simply use ones from `./SEP_dataset/source`.
 4) Create a config file that specifies paths to source files and intermediate files, as well as path to the dataset. See `./SEP_dataset/source/sep_config.json` as an example.
-5) 
+5) Set environmental variable with your OpenAI API key as `OPENAI_API_KEY`.
+6) Generate subtasks: `python expand_tasks.py path_to_config`
+7) Manually review subtasks and delete repetitions.
+8) Generate system prompts: `python generate_system_prompts.py path_to_config`
+9) Generate data: `python generate_data.py path_to_config`
+10) Insert probes in the data: `python insert_probes.py path_to_config`
 
-
-
-
+See examples in `./SEP_dataset` folder.
 
 ### Evaluating Models
 TBD
