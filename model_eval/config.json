@@ -1,6 +1,5 @@
 {
   "input_path": "./model_eval/data_sources/SEP_dataset.json",
-  "prompt_templates_path": "./model_eval/data_sources/prompt_templates.json",
   "output_base_path": "./model_eval/model_outputs/",
   "models": [
     "NousResearch/Llama-2-7b-chat-hf",

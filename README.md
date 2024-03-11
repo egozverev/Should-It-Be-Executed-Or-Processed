@@ -97,4 +97,10 @@ This section describes how to replicate our experiments, mainly explaining datas
 See examples in `./SEP_dataset` folder.
 
 ### Evaluating Models
+
+1) Create a config specifying path to the dataset, output directory and evaluated models. See `model_eval/config.json` as an example.
+2) Run `get_model_outputs.py <model_ix> (optional) <start_ix> (optional) <end_ix>`, where `<model_ix>` is the index of the model in the config file, `<start_ix>` and `<end_ix>` are optional parameters for slicing the dataset for parallelization purposes. 
+3) Use template code from `model_eval/result_analysis.ipynb` for computing the separation score of the model across all dimensions of interest.
+
+## Citation 
 TBD
