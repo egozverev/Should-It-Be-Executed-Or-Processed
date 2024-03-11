@@ -17,7 +17,7 @@ This repository contains:
 
 1. SEP Dataset (Should it be Separated or Processed?): A collection of 9,160 examples designed to test the models' ability to distinguish between instructions and data. The dataset covers 300 different subtasks across three domains. Each element includes:
    - An instruction prompt for the model describing some task.
-   - A data prompt as task input.
+   - A data prompt used as task input.
    - A probe embedded in the data or instruction.
    - A witness to verify probe execution.
 
@@ -85,21 +85,21 @@ This section describes how to replicate our experiments, mainly explaining datas
   "Others..."
 ]
 ```
-3) Create text prompts for expanding tasks to subtasks, generating instruction prompts for subtasks and generating data. Or simply use ones from `./SEP_dataset/source`.
-4) Create a config file that specifies paths to source files and intermediate files, as well as path to the dataset. See `./SEP_dataset/source/sep_config.json` as an example.
-5) Set environmental variable with your OpenAI API key as `OPENAI_API_KEY`.
+3) Create text prompts for expanding tasks to subtasks, generating instruction prompts for subtasks, and generating data. Or simply use ones from `./SEP_dataset/source`.
+4) Create a config file that specifies paths to source files and intermediate files, as well as the path to the dataset. See `./SEP_dataset/source/sep_config.json` as an example.
+5) Set the environmental variable with your OpenAI API key as `OPENAI_API_KEY`.
 6) Generate subtasks: `python expand_tasks.py path_to_config`
 7) Manually review subtasks and delete repetitions.
 8) Generate system prompts: `python generate_system_prompts.py path_to_config`
 9) Generate data: `python generate_data.py path_to_config`
 10) Insert probes in the data: `python insert_probes.py path_to_config`
 
-See examples in `./SEP_dataset` folder.
+See examples in the `./SEP_dataset` folder.
 
 ### Evaluating Models
 
-1) Create a config specifying path to the dataset, output directory and evaluated models. See `model_eval/config.json` as an example.
-2) Run `get_model_outputs.py <model_ix> (optional) <start_ix> (optional) <end_ix>`, where `<model_ix>` is the index of the model in the config file, `<start_ix>` and `<end_ix>` are optional parameters for slicing the dataset for parallelization purposes. 
+1) Create a config specifying a path to the dataset, output directory and evaluated models. See `model_eval/config.json` as an example.
+2) Run `get_model_outputs.py <model_ix> (optional) <start_ix> (optional) <end_ix>`, where `<model_ix>` is the index of the model in the config file, and `<start_ix>`, `<end_ix>` are optional parameters for slicing the dataset for parallelization purposes. 
 3) Use template code from `model_eval/result_analysis.ipynb` for computing the separation score of the model across all dimensions of interest.
 
 ## Citation 
