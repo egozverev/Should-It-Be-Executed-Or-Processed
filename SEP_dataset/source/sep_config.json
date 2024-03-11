@@ -1,5 +1,5 @@
 {
-  "task_types_path": "./source/task_types_reduced.json",
+  "task_types_path": "./source/task_types.json",
   "subtasks_path": "./interim_data_files/subtasks.json",
   "subtasks_sys_path": "./interim_data_files/subtasks_sysprompts.json",
   "raw_data_path": "./interim_data_files/raw_data.json",
