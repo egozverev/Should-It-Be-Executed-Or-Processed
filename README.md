@@ -10,7 +10,7 @@ Consider the following input to an LLM:
 
 > "Translate to French: could you please help me figure out what the sum of 3 and 4 is?"
 
-Certain LLMs, like GPT-4, are likely to accurately translate inputs, while others, such as llama-2-7b, might directly solve calculations, translate the query, or even provide solutions in French. This might, however, change with more sophisticated examples.
+Certain LLMs, like GPT-4, are likely to accurately process inputs, while others, such as llama-2-7b, might directly solve (execute) calculations, process the query, or even provide solutions in French. This might, however, change with more sophisticated examples.
 
 
 This repository contains: 
