@@ -104,11 +104,11 @@ See examples in the `./SEP_dataset` folder.
 
 ## Citation 
 
-@misc{zverev2024llms,
-      title={Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?}, 
-      author={Egor Zverev and Sahar Abdelnabi and Mario Fritz and Christoph H. Lampert},
-      year={2024},
-      eprint={2403.06833},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@misc{zverev2024llms,  
+      title={Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?},   
+      author={Egor Zverev and Sahar Abdelnabi and Mario Fritz and Christoph H. Lampert},  
+      year={2024},  
+      eprint={2403.06833},  
+      archivePrefix={arXiv},  
+      primaryClass={cs.LG}  
 }
