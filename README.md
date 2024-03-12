@@ -103,7 +103,7 @@ See examples in the `./SEP_dataset` folder.
 3) Use template code from `model_eval/result_analysis.ipynb` for computing the separation score of the model across all dimensions of interest.
 
 ## Citation 
-
+```
 @misc{zverev2024llms,  
       title={Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?},   
       author={Egor Zverev and Sahar Abdelnabi and Mario Fritz and Christoph H. Lampert},  
@@ -112,3 +112,4 @@ See examples in the `./SEP_dataset` folder.
       archivePrefix={arXiv},  
       primaryClass={cs.LG}  
 }
+```
