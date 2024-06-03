@@ -1,0 +1,8 @@
+huggingface_hub==0.17.3
+numpy==1.26.4
+openai==0.28.1
+pandas==2.2.1
+scipy==1.12.0
+torch==2.1.0
+tqdm==4.66.1
+transformers==4.34.0

@@ -1,0 +1,8 @@
+[
+    "gemma-1.1-7b-it-sep-fft-lr0.00001-ep3-30523",
+    "gemma-1.1-7b-it-sep-fft-lr0.00002-ep3-24158",
+    "gemma-1.1-7b-it-sep-fft-lr0.00003-ep3-631",
+    "gemma-1.1-7b-it-sep-lora-lr0.0001-ep3-28635",
+    "gemma-1.1-7b-it-sep-lora-lr0.0002-ep3-19800",
+    "gemma-1.1-7b-it-sep-lora-lr0.0003-ep3-15647"
+]

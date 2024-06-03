@@ -1,0 +1,8 @@
+[
+    "zephyr-7b-beta-sep-fft-lr0.00001-ep3-23879",
+    "zephyr-7b-beta-sep-fft-lr0.00002-ep3-27949",
+    "zephyr-7b-beta-sep-fft-lr0.00003-ep3-22431",
+    "zephyr-7b-beta-sep-lora-lr0.0001-ep3-1001",
+    "zephyr-7b-beta-sep-lora-lr0.0002-ep3-9577",
+    "zephyr-7b-beta-sep-lora-lr0.0003-ep3-14928"
+]

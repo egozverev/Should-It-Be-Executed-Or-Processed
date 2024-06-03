@@ -1,0 +1,12 @@
+[
+    "llama3_8b-sep-full-lr0.00001-ep3-25935",
+    "llama3_8b-sep-full-lr0.00003-ep3-10284",
+    "llama3_8b-sep-lora-lr0.0002-ep3-11610",
+    "llama3_8b-sep-qlora-3162",
+    "llama3_8b-sep-qlora-lr0.0002-ep3-24954",
+    "llama3_8b-sep-full-lr0.00002-ep2-4998",
+    "llama3_8b-sep-lora-lr0.0001-ep3-12469",
+    "llama3_8b-sep-lora-lr0.0003-ep3-8189",
+    "llama3_8b-sep-qlora-lr0.0001-ep3-32046",
+    "llama3_8b-sep-qlora-lr0.0003-ep3-4945"
+]

@@ -1,0 +1,43 @@
+{
+  "descr": "These are three most general types of tasks",
+  "Information Processing and Retrieval": {
+    "descr": "This category includes classical NLP tasks that involve the handling, interpretation, and retrieval of information. It encompasses activities where the primary goal is to manage and utilize existing knowledge or data.",
+    "Factual Question Answering": "Responding to queries with accurate, specific information based on available data or known facts.",
+    "Text Summarization": "Condensing lengthy texts into concise summaries, capturing the essential points.",
+    "Information Extraction": "Identifying and extracting key pieces of information from a larger dataset or complex texts.",
+    "Translation": "Converting text or speech from one language to another while maintaining the original meaning and context.",
+    "Document Classification": "Categorizing documents into predefined classes based on their content, such as spam detection in emails.",
+    "Keyword Extraction": "Identifying and extracting the most relevant or significant words or phrases from a text.",
+    "Named Entity Recognition": "Identifying and classifying key entities in the text, such as names of people, places, organizations, dates, and other specifics.",
+    "Sentiment Analysis": "Determining the emotional tone of the text, categorizing it as positive, negative, or neutral.",
+    "Theme Identification": "Determining central themes or topics discussed in the text.",
+    "Part-of-Speech Tagging": "The process of identifying and labeling each word in a text with its corresponding part of speech, such as noun, verb, adjective, etc., based on both its definition and context within the sentence."
+  },
+  "Creative and Generative Tasks": {
+    "descr": "This category is for tasks that require the generation of new content or ideas. It emphasizes creativity, originality, and the ability to construct meaningful or aesthetically pleasing outputs.",
+    "Artistic Concept Generation": "The creative process of coming up with concepts, themes, or inspiration for artistic endeavors, applicable to visual arts, music, writing, or other forms of artistic expression.",
+    "Code Writing": "The task of creating software code, involving writing scripts or programs in various programming languages, focusing on aspects like functionality, efficiency, and readability.",
+    "Creative Writing and Composition": "The process of generating original artistic content, such as poems, stories, or narratives, emphasizing creativity, narrative structure, and expressive use of language.",
+    "Textual Adaptation and Transformation": "Involves modifying existing texts to create new versions, such as developing alternative endings for stories, converting texts into different genres, or reimagining narratives from new perspectives.",
+    "Assisting with Emails": "The skill of drafting and structuring emails for business or professional communication, focusing on clarity, tone, and appropriateness to the context and audience.",
+    "Culinary Assistance and Guidance": "Providing support and advice in cooking processes, including recipe selection, ingredient substitution, cooking techniques, and presentation tips.",
+    "Humor and Joke Crafting": "The creative process of developing humorous content, jokes, or witty remarks, tailored to entertain or engage a specific audience.",
+    "Personalized Recommendation Generation": "Generating tailored suggestions or recommendations based on user preferences or requirements, applicable in areas like books, movies, products, or travel destinations.",
+    "Hobby Development Assistance": "Providing guidance and support for exploring and developing new hobbies, including advice on selecting hobbies, creating learning plans, and offering tips for skill advancement.",
+    "Prompt Development and Customization": "The process of creating and refining prompts for various applications, encompassing the generation of original prompts and the modification of existing ones to suit specific needs or contexts."
+  },
+  "Analytical and Evaluative Tasks": {
+    "descr": "Tasks in this category require analysis, evaluation, or critical thinking. They involve interpreting information, making judgments, or providing reasoned arguments.",
+    "Linguistic Analysis": "Analyzing grammatical, syntactic, and stylistic aspects of the text.",
+    "Critical Review and Assessment": "Evaluating content, such as articles, books, or projects, for quality, coherence, and overall effectiveness, often providing constructive feedback.",
+    "Grammatical Error Correction": "The task of detecting and correcting grammatical errors in a text, which includes fixing issues related to verb tense, subject-verb agreement, sentence structure, punctuation, and other aspects of grammar.",
+    "Simplifying Complex Ideas": "The process of breaking down and explaining complex concepts or information in a simpler, more understandable way, making them accessible to a broader audience.",
+    "Mathematical Problem Solving": "The task of solving mathematical problems or equations, ranging from basic arithmetic to more advanced areas like calculus, statistics, or algebra.",
+    "Code Analysis": "Involves examining, interpreting, and debugging existing code, as well as providing insights on code structure, optimization, and best practices in software development.",
+    "Business Analysis and Strategy Development": "The process of evaluating business opportunities, analyzing plans and reports, and generating strategic ideas to support business growth, decision-making, and operational efficiency.",
+    "Healthcare and Medical Analysis": "Examining healthcare practices, medical treatments, or patient data to improve health outcomes and care efficiency.",
+    "Legal Case Analysis": "Examining legal documents, cases, and precedents to interpret laws and provide legal insights or strategies.",
+    "Cybersecurity Threat Assessment": "Evaluating digital systems for potential security threats and vulnerabilities, suggesting measures to enhance security.",
+    "Fiction Analysis": "Critically evaluating a piece of flash fiction, focusing on its narrative structure, character development, and impact."
+  }
+}

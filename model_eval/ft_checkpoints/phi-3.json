@@ -1,0 +1,12 @@
+[
+    "Phi-3-mini-4k-instruct-sep-fft-lr0.00001-ep3-17148",
+    "Phi-3-mini-4k-instruct-sep-fft-lr0.00002-ep3-18349/checkpoint-597",
+    "Phi-3-mini-4k-instruct-sep-fft-lr0.00003-ep3-13295/checkpoint-1195",
+    "Phi-3-mini-4k-instruct-sep-fft-lr0.00003-ep3-6470",
+    "Phi-3-mini-4k-instruct-sep-lora-lr0.0001-ep3-26253/checkpoint-2390",
+    "Phi-3-mini-4k-instruct-sep-lora-lr0.0001-ep3-767/checkpoint-2390",
+    "Phi-3-mini-4k-instruct-sep-lora-lr0.0002-ep3-26326/checkpoint-2390",
+    "Phi-3-mini-4k-instruct-sep-lora-lr0.0002-ep3-6373/checkpoint-2390",
+    "Phi-3-mini-4k-instruct-sep-lora-lr0.0003-ep3-11905/checkpoint-2390",
+    "Phi-3-mini-4k-instruct-sep-lora-lr0.0003-ep3-15273/checkpoint-2390"
+]

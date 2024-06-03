@@ -48,7 +48,6 @@ def retry_with_exponential_backoff(
     return wrapper
 
 
-# Example usage
 @retry_with_exponential_backoff
 def completions_with_backoff(**kwargs):
     """Function wrapper to apply retry mechanism to OpenAI's ChatCompletion.create call."""

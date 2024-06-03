@@ -1,21 +1,28 @@
 {
-  "input_path": "./model_eval/data_sources/SEP_dataset.json",
+  "train_input_path": "../datasets/validation_dataset.json",
+  "eval_input_path": "./datasets/SEP_dataset.json",
+  "prompt_templates_path": "./model_eval/prompt_templates.json",
   "output_base_path": "./model_eval/model_outputs/",
+  "checkpoints_path": "../finetune/checkpoints/",
   "models": [
+    "google/gemma-1.1-2b-it",
+    "google/gemma-1.1-7b-it",
+    "meta-llama/Meta-Llama-3-8B-Instruct",
     "NousResearch/Llama-2-7b-chat-hf",
-    "teknium/OpenHermes-2.5-Mistral-7B",
-    "cognitivecomputations/dolphin-2.2.1-mistral-7b",
+    "Nexusflow/Starling-LM-7B-beta",
+    "microsoft/Phi-3-mini-4k-instruct",
     "HuggingFaceH4/zephyr-7b-beta",
-    "NousResearch/Llama-2-13b-chat-hf",
-    "gpt-3.5-turbo-0613",
-    "gpt-4-0125-preview"
+    "gpt-3.5-turbo-0125",
+    "gpt-4-turbo-2024-04-09"
   ],
   "model_types": [
-    "llama",
-    "hermes",
-    "dolphin",
+    "gemma2b",
+    "gemma7b",
+    "llama-3-8b",
+    "llama-2-7b",
+    "starling",
+    "phi-3",
     "zephyr",
-    "llama13b",
     "gpt-3.5",
     "gpt-4"
   ]
