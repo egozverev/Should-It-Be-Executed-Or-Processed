@@ -1,6 +1,7 @@
 # Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?
 
-![alt text](https://github.com/egozverev/Should-It-Be-Executed-Or-Processed/blob/main/chatgpt-london.png?raw=true)
+![alt text](https://github.com/egozverev/Should-It-Be-Executed-Or-Processed/blob/main/chatgpt-london.png?raw=true)  
+
 Accompanying code and dataset for the "Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?" paper.   
 
 **UPD (03/06/2024) Full paper is available on arxiv now. We explore the effect of prompt engineering, prompt optimization and fine-tuning on instruction-data separation.**  
@@ -128,12 +129,12 @@ All evaluation code is available at `/model_eval/analyze_results.py` and `/model
 
 ## Citation 
 ```
-@misc{zverev2024llms,  
-      title={Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?},   
-      author={Egor Zverev and Sahar Abdelnabi and Mario Fritz and Christoph H. Lampert},  
-      year={2024},  
-      eprint={2403.06833},  
-      archivePrefix={arXiv},  
-      primaryClass={cs.LG}  
+@misc{zverev2024llms,
+      title={Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?}, 
+      author={Egor Zverev and Sahar Abdelnabi and Soroush Tabesh and Mario Fritz and Christoph H. Lampert},
+      year={2024},
+      eprint={2403.06833},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
 }
 ```
