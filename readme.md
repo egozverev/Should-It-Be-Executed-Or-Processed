@@ -3,7 +3,7 @@
 ![alt text](https://github.com/egozverev/Should-It-Be-Executed-Or-Processed/blob/main/chatgpt-london.png?raw=true)  
 
 Accompanying code and dataset for the "Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?" paper.   
-
+**UPD (01/02/2024) This work got accepted to ICLR 2025.**  
 **UPD (03/06/2024) Full paper is available on arxiv now. We explore the effect of prompt engineering, prompt optimization and fine-tuning on instruction-data separation.**  
 
 **UPD (11/03/2024): Preliminary version of this work has been accepted  for ICLR 2024 Workshop on Secure and Trustworthy Large Language Models**
@@ -129,12 +129,10 @@ All evaluation code is available at `/model_eval/analyze_results.py` and `/model
 
 ## Citation 
 ```
-@misc{zverev2024llms,
-      title={Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?}, 
-      author={Egor Zverev and Sahar Abdelnabi and Soroush Tabesh and Mario Fritz and Christoph H. Lampert},
-      year={2024},
-      eprint={2403.06833},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@inproceedings{zverev2025,  
+  title={Can {LLMs} Separate Instructions From Data? And What Do We Even Mean By That?},  
+  author = {Egor Zverev and Sahar Abdelnabi and Soroush Tabesh and Mario Fritz and Christoph H. Lampert},  
+  booktitle={ICLR},  
+  year={2025}  
 }
 ```
