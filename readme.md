@@ -4,8 +4,7 @@
 
 Accompanying code and dataset for the "Can LLMs Separate Instructions From Data? And What Do We Even Mean By That?" paper.   
 **UPD (01/02/2024) This work got accepted to ICLR 2025.**  
-**UPD (03/06/2024) Full paper is available on arxiv now. We explore the effect of prompt engineering, prompt optimization and fine-tuning on instruction-data separation.**  
-
+**UPD (03/06/2024) Full paper is available on arxiv now. We explore the effect of prompt engineering, prompt optimization and fine-tuning on instruction-data separation.**   
 **UPD (11/03/2024): Preliminary version of this work has been accepted  for ICLR 2024 Workshop on Secure and Trustworthy Large Language Models**
 
 ## Overview 
