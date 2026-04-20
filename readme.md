@@ -126,6 +126,9 @@ All evaluation code is available at `/model_eval/analyze_results.py` and `/model
 4) Analysis of the averaged separation and utility scores with / without the GPTs.
 5) Utility vs separation plot. 
 
+## License
+
+Code in this repository is licensed under the [MIT License](LICENSE). The dataset in `data/` is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ## Citation 
 ```
